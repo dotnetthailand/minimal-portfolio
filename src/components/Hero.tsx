@@ -2,33 +2,60 @@ import React, { useState, useEffect } from "react";
 import styled from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
 import "../themes/font-awesome-all-5.2.0.css";
+import config from "../../data/SiteConfig";
 
 const Hero = (props: any) => {
   const { ...restProps } = props;
 
   return (
     <Container {...restProps}>
-      <h2>Hi 👋 I'm Thada, Software Engineer, welcome to my blog. <Subtitle>
-        Sharing ideas, programming techniques, web technology and others.</Subtitle></h2>
+      <div className="header-main">
+        <h1>{config.siteTitle}</h1>
 
+        <span className="attr">Web designer</span>
+        <span className="dot">•</span>
+        <span className="attr">Architect</span>
+        <span className="dot">•</span>
+        <span className="attr">Mechanic</span>
+<p>
         <Button href="http://bit.ly/mildthada-notion-cv" target="_blank">📄&nbsp; About</Button>
         <Button href="https://github.com/mildronize" target="_blank"><i className="fab fa-github"></i>&nbsp; Github</Button>
+        </p>
+      </div>
     </Container>
   );
 };
 
 const Container = styled.div`
-  margin-top: 150px;
+  /* margin-top: 150px; */
   margin-bottom: 100px;
 
-  h2{
+  h1{
     font-family: var(--font-family-inter);
     font-size: 1.6rem;
 
     ${breakpoint('tablet')`
-      font-size: 2rem;
+      font-size: 3.5rem;
     `}
 
+  }
+
+  .attr {
+      font-family: 'Anonymous Pro', monospace;
+      background-color: #C3F8FF;
+      font-size:1.2rem;
+      margin: 0 .5rem 0 .5rem;
+  
+    }
+
+    .attr:hover {
+      background-color: transparent;
+  }
+
+  .header-main {
+    padding: 0;
+    text-align: center;
+    
   }
 `;
 

@@ -8,6 +8,7 @@ import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
 
 import styled from "styled-components"
+import Hero from "../components/Hero";
 
 function PostListingPagination({ pageContext, data }) {
   function renderPaging() {
@@ -45,6 +46,7 @@ function PostListingPagination({ pageContext, data }) {
         <div className="posts-container">
           <Helmet title={config.siteTitle} />
           <SEO />
+          <Hero />
           <PostListing postEdges={postEdges} />
         </div>
         {renderPaging()}

@@ -10,21 +10,18 @@ const TopBar = (props: any) => {
 
   return (
     <div {...restProps}>
-      <FixedTopContainer >
-        <CenterContainer>
-          <FlexContainer>
-            <FlexItem>
-              <Logo><Link to="/" >Thada W.</Link></Logo>
-            </FlexItem>
-            <FlexItem >
-              <ToggleOffset>
-                <ToggleDarkMode />
-              </ToggleOffset>
-            </FlexItem>
-          </FlexContainer>
-        </CenterContainer>
-      </FixedTopContainer>
-      <HeaderOffsetBottom />
+      <Wrapper>
+        <FlexContainer>
+          <FlexItem>
+
+          </FlexItem>
+          <FlexItem >
+            <ToggleOffset>
+              <ToggleDarkMode />
+            </ToggleOffset>
+          </FlexItem>
+        </FlexContainer>
+      </Wrapper>
     </div>
   );
 };
@@ -71,6 +68,10 @@ const FlexContainer = styled.div`
 `;
 
 const FlexItem = styled.div``;
+
+const  Wrapper = styled.div`
+  margin-top: 15px;
+`;
 
 
 export default TopBar;

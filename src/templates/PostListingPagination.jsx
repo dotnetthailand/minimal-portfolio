@@ -46,7 +46,6 @@ function PostListingPagination({ pageContext, data }) {
         <div className="posts-container">
           <Helmet title={config.siteTitle} />
           <SEO />
-          <Hero />
           <PostListing postEdges={postEdges} />
         </div>
         {renderPaging()}

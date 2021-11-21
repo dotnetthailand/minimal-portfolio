@@ -20,11 +20,10 @@ const Hero = (props: any) => {
         <span className="attr">Mechanic</span>
         <UserLinks config={config} labeled />
         <p>
-          <Button href="http://bit.ly/mildthada-notion-cv" target="_blank">Recent Activites</Button>
-          <Button href="https://github.com/mildronize" target="_blank">Recent Contribution</Button>
-          <Button href="https://github.com/mildronize" target="_blank">Project</Button>
-          <Button href="https://github.com/mildronize" target="_blank">About</Button>
-          <Button href="https://github.com/mildronize" target="_blank">Contact</Button>
+          <Button href="/">Recent Activites</Button>
+          <Button href="/projects">Projects</Button>
+          <Button href="/profile">Profile</Button>
+          <Button href="/contact">Contact</Button>
         </p>
       </div>
     </Container>

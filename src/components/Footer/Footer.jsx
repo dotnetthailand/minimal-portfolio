@@ -17,11 +17,6 @@ function Footer({ config }) {
 
       <center>
         <div className="footer-copyright">© 2015 - 2021 thadaw.com </div>
-        <div className="footer-info">
-          <a href="https://github.com/mildronize/thadaw.com">V 5.0.0</a> Built with ❤️ by Thada Wangthammang
-         </div>
-         <UserLinks config={config} labeled />
-     
       </center>
 
     </FooterContainer>

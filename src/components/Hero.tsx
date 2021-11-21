@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from 'styled-components';
 import breakpoint from 'styled-components-breakpoint';
+import UserLinks from "../components/UserLinks/UserLinks";
 import "../themes/font-awesome-all-5.2.0.css";
 import config from "../../data/SiteConfig";
 
@@ -17,9 +18,13 @@ const Hero = (props: any) => {
         <span className="attr">Architect</span>
         <span className="dot">•</span>
         <span className="attr">Mechanic</span>
-<p>
-        <Button href="http://bit.ly/mildthada-notion-cv" target="_blank">📄&nbsp; About</Button>
-        <Button href="https://github.com/mildronize" target="_blank"><i className="fab fa-github"></i>&nbsp; Github</Button>
+        <UserLinks config={config} labeled />
+        <p>
+          <Button href="http://bit.ly/mildthada-notion-cv" target="_blank">Recent Activites</Button>
+          <Button href="https://github.com/mildronize" target="_blank">Recent Contribution</Button>
+          <Button href="https://github.com/mildronize" target="_blank">Project</Button>
+          <Button href="https://github.com/mildronize" target="_blank">About</Button>
+          <Button href="https://github.com/mildronize" target="_blank">Contact</Button>
         </p>
       </div>
     </Container>
@@ -31,6 +36,7 @@ const Container = styled.div`
   margin-bottom: 100px;
 
   h1{
+    margin-bottom: 0;
     font-family: var(--font-family-inter);
     font-size: 1.6rem;
 

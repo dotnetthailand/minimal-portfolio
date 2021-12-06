@@ -7,10 +7,11 @@ tags:
 - javascript
 - es6
 
-categories: [en]
-language: en
-image: https://www.dropbox.com/s/9u7jxihxp12n06w/2019-03-13-react-pattern.jpg?raw=1
-toc: true
+activity: yyy
+type: Blog Post
+primaryArea: React
+additionalArea: F# JavaScript
+
 ---
 
 

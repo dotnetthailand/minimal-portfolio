@@ -60,7 +60,7 @@ export default PostListingPagination;
 export const listingQuery = graphql`
   query ListingQuery($skip: Int!, $limit: Int!) {
     allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { fields: [fields___date], order: DESC }
       limit: $limit
       skip: $skip
     ) {
@@ -75,7 +75,6 @@ export const listingQuery = graphql`
           frontmatter {
             title
             tags
-            cover
             date
           }
         }

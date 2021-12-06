@@ -109,7 +109,7 @@ rect.ContributionCalendar-day[data-level="4"] {
 
 .text-small {
     font-size: 12px;
-    color: #767676;
+    color: var(--colors-text-3);
 }
 
 .calendar-graph {
@@ -142,7 +142,7 @@ rect.ContributionCalendar-day[data-level="4"] {
     line-height: 1.3em;
     font-size: 24px;
     display: block;
-    color: #333;
+    color: var(--colors-text-3);
 }
 
 .calendar img.spinner {
@@ -153,12 +153,12 @@ rect.ContributionCalendar-day[data-level="4"] {
 
 .monospace {
     text-align: center;
-    color: #000;
+    color: var(--colors-text-3);
     font-family: monospace;
 }
 
 .monospace a {
-    color: #1d75ab;
+    color: var(--colors-text-3);
     text-decoration: none;
 }
 
@@ -174,10 +174,10 @@ rect.ContributionCalendar-day[data-level="4"] {
 .left.text-muted {
     float: left;
     margin-left: 9px;
-    color: #767676;
+    color: var(--colors-text-3);
 }
 .left.text-muted a {
-    color: #4078c0;
+    color: var(--colors-text-3);
     text-decoration: none;
 }
 .left.text-muted a:hover,
@@ -202,7 +202,7 @@ h2.f4.text-normal.mb-3 {
     z-index: 99999;
     padding: 10px;
     font-size: 12px;
-    color: #959da5;
+    color: var(--colors-text-3);
     text-align: center;
     background: rgba(0, 0, 0, 0.85);
     border-radius: 3px;
@@ -229,6 +229,6 @@ h2.f4.text-normal.mb-3 {
 }
 
 text.ContributionCalendar-label {
-    fill: #ccc;
+    fill: var(--colors-text-3);
     font-size: 11px;
 }

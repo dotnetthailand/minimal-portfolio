@@ -6,7 +6,7 @@ import Hero from "../components/Hero";
 import Footer from "../components/Footer/Footer";
 import config from "../../data/SiteConfig";
 import CenterContainer from "../components/CenterContainer";
-
+import ListGithubProjects from "../components/ListGithubProjects";
 import GitHubCalendar from 'github-calendar';
 import "../themes/github-calendar-responsive.css";
 
@@ -14,7 +14,7 @@ const PageLayout = (props: any) => {
     const { children } = props;
 
     useEffect(() => {
-        GitHubCalendar(".calendar", "mildronize", { responsive: true });
+        GitHubCalendar(".calendar", config.GitHub.username, { responsive: true });
     }, []);
 
     return (
@@ -28,6 +28,9 @@ const PageLayout = (props: any) => {
                     </MainContainer>
                     <GitHubCalendarContainer>
                       <div className="calendar" />
+                      <Title>Recent Contribution Open Source Projects</Title>
+                      <ListGithubProjects />
+                      <a href={`https://github.com/${config.GitHub.username}?tab=repositories`} target="_blank">More</a>
                     </GitHubCalendarContainer>
                 </FlexContainer>
             </div>
@@ -41,6 +44,12 @@ export const FlexContainer = styled.div`
   display: flex; /* or inline-flex */
   justify-content: space-around;
 `;
+
+export const Title = styled.h4`
+  font-size: 1.2rem;
+`;
+
+
 
 export const GitHubCalendarContainer = styled.div`
 
@@ -63,7 +72,7 @@ export const GitHubCalendarContainer = styled.div`
 
 
 export const MainContainer = styled.div`
-  /* width: 100%; */
+  width: 50%;
 `;
 
 export default PageLayout;

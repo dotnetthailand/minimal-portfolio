@@ -15,8 +15,6 @@ function PostListing({ postEdges }) {
     }
     postList.push({
       path: postEdge.node.fields.slug,
-      tags: tags,
-      cover: postEdge.node.frontmatter.cover,
       title: postEdge.node.frontmatter.title,
       date: postEdge.node.fields.date?postEdge.node.fields.date: "2021-01-01",
       excerpt: postEdge.node.excerpt,
@@ -24,10 +22,17 @@ function PostListing({ postEdges }) {
     });
   });
 
-  console.log(postList);
 
   return (
     <div>
+       <FlexContainer>
+          <FlexItem width="100px">
+            <Title>Date</Title> 
+          </FlexItem>
+          <FlexItem >
+            <Title>Title</Title>
+          </FlexItem>
+        </FlexContainer>
       {
         /* Your post list here. */
         postList.map((post) => (
@@ -35,18 +40,14 @@ function PostListing({ postEdges }) {
             <Link to={post.path} key={post.title} >
               {/* <a className="post-item-link"> */}
               <FlexContainer>
-                <FlexItem width="150px">
+                <FlexItem width="100px">
                   <PostDate >
                     {format(parseISO(post.date), "yyyy MMM, d")}
                   </PostDate>
                 </FlexItem>
                 <FlexItem >
-                  <h4>{post.title}</h4>
-                  {/* <TagContainer>
-                    {post.tags.map((tag) => (
-                      <Tag>#{tag} </Tag>
-                    ))}
-                  </TagContainer> */}
+                  {post.title} 
+
                 </FlexItem>
               </FlexContainer>
               {/* </a> */}
@@ -61,21 +62,26 @@ function PostListing({ postEdges }) {
 const PostDate = styled.time`
   color: var(--colors-text-3);
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 0.8rem;
 `;
 
+const Title = styled.h4`
+  font-size: 0.9rem;
+  padding: 20px 5px 0px 5px;
+`;
+
+
 const PostItem = styled.div`
-  margin-bottom:10px;
 
   a, a:visited{
     display: inline-block;
     color: var(--text-heading);
     font-weight: 400;
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     line-height: 1.5;
     text-decoration: none;
     width:100%;
-    padding: 20px 15px 20px 15px;
+    padding: 20px 5px 20px 5px;
     border-radius: 10px;
   }
 
@@ -89,16 +95,6 @@ h4{
 }
 `;
 
-const TagContainer = styled.div`
-  margin-top: -5px;
-  margin-bottom:20px;
-`;
-
-const Tag = styled.span`
-  color: var(--colors-text-3);
-  font-size: 0.8rem;
-  margin-right: 20px;
-`;
 
 const FlexContainer = styled.div`
   display: flex;

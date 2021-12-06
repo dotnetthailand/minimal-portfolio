@@ -94,6 +94,7 @@ body.light {
     --text-heading: #222;
     --textNormal: #222;
     /* Color */
+    --colors-border: hsla(var(--palette-gray-70), 10%); 
     --colors-logo: hsla(var(--palette-blue-70), 100%);
     --colors-brand: hsla(var(--palette-blue-50), 100%);
     --colors-body: hsla(var(--palette-gray-00), 100%);
@@ -127,6 +128,7 @@ body.light {
     --prism-keyword: #07a;
     --prism-function: #DD4A68;
     --prism-regex: #e90;
+
 }
 
 body.dark {
@@ -136,6 +138,7 @@ body.dark {
     --background-default: #1a202c;
     --text-heading: #fafafa;
     --textNormal: #fafafa;
+    --colors-border: hsla(var(--palette-gray-70), 100%); 
     --colors-logo: hsla(var(--palette-blue-30), 100%);
     --colors-brand: hsla(var(--palette-blue-40), 100%);
     --colors-body: hsla(var(--palette-gray-95), 100%);
@@ -169,6 +172,7 @@ body.dark {
     --prism-keyword: #8be9fd;
     --prism-function: #f1fa8c;
     --prism-regex: #ffb86c;
+
 }
 
 blockquote {

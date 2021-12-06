@@ -76,6 +76,11 @@ export const listingQuery = graphql`
             title
             tags
             date
+            activity
+            type
+            link
+            primaryArea
+            additionalArea
           }
         }
       }

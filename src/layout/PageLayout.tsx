@@ -54,7 +54,7 @@ export const Title = styled.h4`
 export const GitHubCalendarContainer = styled.div`
 
   .calendar{
-    width: 600px;
+    width: 500px;
     .graph-before-activity-overview{
     padding: 13px;
     }

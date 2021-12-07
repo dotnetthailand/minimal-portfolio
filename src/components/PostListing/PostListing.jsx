@@ -30,26 +30,27 @@ function PostListing({ postEdges }) {
 
 
   return (
-    <div>
+    <TableContainer>
+      <div className="table">
        <FlexContainer>
-          <FlexItem width="100px">
+          <div className="column">
             <Title>Date</Title> 
-          </FlexItem>
-          <FlexItem width="150px">
+          </div>
+          <div className="column">
             <Title>Title</Title>
-          </FlexItem>
-          <FlexItem width="100px">
+          </div>
+          <div className="column">
             <Title>Activity</Title>
-          </FlexItem>
-          <FlexItem width="100px">
+          </div>
+          <div className="column">
             <Title>Type</Title>
-          </FlexItem>
-          <FlexItem width="100px">
+          </div>
+          <div className="column">
             <Title>Primary Contribution Area</Title>
-          </FlexItem>
-          <FlexItem width="100px">
+          </div>
+          <div className="column">
             <Title>Additional Contribution Area</Title>
-          </FlexItem>
+          </div>
         </FlexContainer>
       {
         /* Your post list here. */
@@ -58,34 +59,35 @@ function PostListing({ postEdges }) {
             <Link to={post.path} key={post.title} >
               {/* <a className="post-item-link"> */}
               <FlexContainer>
-                <FlexItem width="100px">
+                <div className="column">
                   <PostDate >
                     {format(parseISO(post.date), "yyyy MMM, d")}
                   </PostDate>
-                </FlexItem>
-                <FlexItem width="150px">
+                </div>
+                <div className="column">
                   {post.title} 
-                </FlexItem>
+                </div>
                 
-                <FlexItem width="100px">
+                <div className="column">
                   {post.activity} 
-                </FlexItem>
-                <FlexItem width="100px">
+                </div>
+                <div className="column">
                   {post.type} 
-                </FlexItem>
-                <FlexItem width="100px">
+                </div>
+                <div className="column">
                   {post.primaryArea} 
-                </FlexItem>
-                <FlexItem>
+                </div>
+                <div className="column">
                   {post.additionalArea} 
-                </FlexItem>
+                </div>
               </FlexContainer>
               {/* </a> */}
             </Link>
           </PostItem>
         ))
       }
-    </div>
+      </div>
+    </TableContainer>
   );
 }
 
@@ -125,6 +127,12 @@ h4{
 }
 `;
 
+const TableContainer = styled.div`
+  .table .column{
+    // 6 Columns table
+    width: 16.6% 
+  }
+`;
 
 const FlexContainer = styled.div`
   display: flex;
@@ -135,13 +143,13 @@ const FlexContainer = styled.div`
   `}
 `;
 
-const FlexItem = styled.div`
-  padding-left: 10px;
-  width: 100%;
+// const div = styled.div`
+//   padding-left: 10px;
+//   width: 100%;
 
-  ${breakpoint('tablet')`
-    width: ${({ width }) => (width ? width : 0)};
-  `}
-`;
+//   ${breakpoint('tablet')`
+//     width: ${({ width }) => (width ? width : 0)};
+//   `}
+// `;
 
 export default PostListing;

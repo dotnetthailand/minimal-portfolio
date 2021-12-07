@@ -1,6 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import { graphql, Link } from "gatsby";
+import { graphql, Link as GatsbyLink } from "gatsby";
 import Layout from "../layout";
 import PageLayout from "../layout/PageLayout";
 import PostListing from "../components/PostListing/PostListing";
@@ -9,6 +9,7 @@ import config from "../../data/SiteConfig";
 
 import styled from "styled-components"
 import Hero from "../components/Hero";
+
 
 function PostListingPagination({ pageContext, data }) {
   function renderPaging() {
@@ -19,21 +20,21 @@ function PostListingPagination({ pageContext, data }) {
     const isLastPage = currentPageNum === pageCount;
 
     return (
-      <div className="paging-container">
-        {!isFirstPage && <Link to={prevPage}>Previous</Link>}
+      <PagingContainer>
+        {!isFirstPage && <Link href={prevPage}>Previous</Link>}
         {[...Array(pageCount)].map((_val, index) => {
           const pageNum = index + 1;
           return (
             <Link
               key={`listing-page-${pageNum}`}
-              to={pageNum === 1 ? "/" : `/${pageNum}/`}
+              href={pageNum === 1 ? "/" : `/${pageNum}/`}
             >
               {pageNum}
             </Link>
           );
         })}
-        {!isLastPage && <Link to={nextPage}>Next</Link>}
-      </div>
+        {!isLastPage && <Link href={nextPage}>Next</Link>}
+      </PagingContainer>
     
     );
   }
@@ -53,6 +54,26 @@ function PostListingPagination({ pageContext, data }) {
     </PageLayout>
   );
 }
+
+
+// It should use GatsbyLink due to better performance
+const Link = styled.a`
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 10px;
+  :hover{
+    cursor: pointer;
+    background: var(--colors-hover-0);
+  }
+  i{
+    color: var(--color-default);
+    font-size: 1.2em;
+  }
+`;
+
+const PagingContainer = styled.div`
+  margin-top: 30px;
+`;
 
 export default PostListingPagination;
 

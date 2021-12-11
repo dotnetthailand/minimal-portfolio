@@ -43,6 +43,7 @@ function PostListingPagination({ pageContext, data }) {
 
   return (
     <PageLayout>
+      <h2>Recent Activites</h2>
       <div className="listing-container">
         <div className="posts-container">
           <Helmet title={config.siteTitle} />

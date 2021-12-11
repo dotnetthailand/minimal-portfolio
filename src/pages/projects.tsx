@@ -12,7 +12,7 @@ function AboutPage(props: PageProps) {
     <Layout>
       <div className="about-container">
         <Helmet title={`About | ${config.siteTitle}`} />
-        <h1>Projects</h1>
+        <h2>Projects</h2>
         {projects.map((project: any) => (
           <ProjectItem><a href={project.link} target="_blank">{project.name}</a>
             <TagContainer>
@@ -27,14 +27,17 @@ function AboutPage(props: PageProps) {
   );
 }
 const ProjectItem = styled.div`
-  padding-bottom: 15px;
+  margin-bottom: 15px;
+  padding: 15px;
+  border: 1px solid var(--colors-border);
+  border-radius: 7px;
   font-size: 1.2rem;
 `;
 
 
 const TagContainer = styled.div`
   margin-top: -5px;
-  margin-bottom:20px;
+  /* margin-bottom:20px; */
 `;
 
 const Tag = styled.span`

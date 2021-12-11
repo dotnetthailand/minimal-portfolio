@@ -18,17 +18,23 @@ const ListGithubProjects = (props: any) => {
   }
 
   return (
-    <>
+    <Container>
       {repos.map((repo:any) => (
           <RepoItem><a href={repo.html_url} target="_blank">{repo.name}</a></RepoItem>
       ))}
-    </>
+    </Container>
   );
 };
 
 const RepoItem = styled.div`
-  padding-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--colors-border);
+  margin-bottom: 10px;
   font-size: 1rem;
 `;
+
+const Container = styled.div`
+  padding-bottom: 10px;
+`
 
 export default ListGithubProjects;

@@ -1,12 +1,11 @@
 import React from "react";
 import { Link } from "gatsby";
 import UserLinks from "../UserLinks/UserLinks";
-// import "./Footer.css";
+// import config from '../../../data/SiteConfigs';
 import styled from 'styled-components';
 import "../../themes/font-awesome-all-5.2.0.css";
 
 function Footer({ config }) {
-  const url = config.siteRss;
   const { copyright } = config;
   if (!copyright) {
     return null;
@@ -14,9 +13,8 @@ function Footer({ config }) {
   return (
 
     <FooterContainer>
-
       <center>
-        <div className="footer-copyright">© 2015 - 2021 thadaw.com </div>
+        <div className="footer-copyright">{copyright}</div>
       </center>
 
     </FooterContainer>

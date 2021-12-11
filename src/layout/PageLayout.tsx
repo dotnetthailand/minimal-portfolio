@@ -30,7 +30,7 @@ const PageLayout = (props: any) => {
                       <div className="calendar" />
                       <Title>Recent Contribution Open Source Projects</Title>
                       <ListGithubProjects />
-                      <a href={`https://github.com/${config.GitHub.username}?tab=repositories`} target="_blank">More</a>
+                      <MoreButton href={`https://github.com/${config.GitHub.username}?tab=repositories`} target="_blank">More projects</MoreButton>
                     </GitHubCalendarContainer>
                 </FlexContainer>
             </div>
@@ -49,6 +49,16 @@ export const Title = styled.h4`
   font-size: 1.2rem;
 `;
 
+export const MoreButton= styled.a`
+  padding-top: 20px;
+  font-size: 0.9rem;
+  text-decoration: underline;
+  color: var(--colors-text-3);
+
+  &:visited{
+    color: var(--colors-text-3);
+  }
+`;
 
 
 export const GitHubCalendarContainer = styled.div`

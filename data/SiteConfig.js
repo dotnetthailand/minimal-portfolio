@@ -1,5 +1,5 @@
 const config = {
-  siteTitle: "Developer", // Site title.
+  siteTitle: "Thada", // Site title.
   siteTitleShort: "Thada W", // Short site title for homescreen (PWA). Preferably should be under 12 characters to prevent truncation.
   siteTitleAlt: "Thada W.", // Alternative site title for SEO.
   siteLogo: "/logos/android-chrome-512x512.png", // Logo used for SEO and manifest.

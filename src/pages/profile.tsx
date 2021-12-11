@@ -10,7 +10,7 @@ function AboutPage(props: PageProps) {
     <Layout>
       <div className="about-container">
         <Helmet title={`About | ${config.siteTitle}`} />
-        <h1>Profile</h1>
+        <h2>Profile</h2>
         <p>Vestibulum tempus faucibus felis, nec tristique justo eleifend at. Vivamus sed est mattis, ullamcorper eros non, suscipit augue. Sed vestibulum dapibus nisi ut luctus. Nullam varius urna non facilisis ultricies. In accumsan lectus efficitur nulla aliquam dapibus. Nunc ultrices vestibulum sem et hendrerit. Fusce vel bibendum enim.
         </p>
         <p>

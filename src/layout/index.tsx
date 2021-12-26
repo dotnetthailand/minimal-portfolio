@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Helmet } from "react-helmet";
 import config from "../../data/SiteConfig";
 import "../themes/rootTheme.css";

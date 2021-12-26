@@ -7,7 +7,7 @@ import config from "../../data/SiteConfig";
 import UserLinks from "../components/UserLinks/UserLinks";
 import { onMobile } from "../themes/responsive";
 
-function ProfilePage(props: PageProps) {
+function ProfilePage() {
   return (
     <Layout>
       <div className="about-container">

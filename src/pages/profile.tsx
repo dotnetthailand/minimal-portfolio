@@ -3,10 +3,9 @@ import { PageProps } from "gatsby";
 import { Helmet } from "react-helmet";
 import styled from 'styled-components';
 import Layout from "../layout/PageLayout";
-import About from "../components/About/About";
 import config from "../../data/SiteConfig";
 import UserLinks from "../components/UserLinks/UserLinks";
-import { onMobile, onTablet } from "../themes/responsive";
+import { onMobile } from "../themes/responsive";
 
 function ProfilePage(props: PageProps) {
   return (

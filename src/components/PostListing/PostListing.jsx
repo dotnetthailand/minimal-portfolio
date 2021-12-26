@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 import styled from 'styled-components';
 import { parseISO, format } from "date-fns";
+import config from '../../../data/SiteConfig';
 
 function PostListing({ postEdges }) {
   const postList = [];
@@ -56,11 +57,10 @@ function PostListing({ postEdges }) {
         postList.map((post) => (
           <PostItem>
             <Link to={post.path} key={post.title} >
-              {/* <a className="post-item-link"> */}
               <FlexContainer>
                 <div className="column">
                   <PostDate >
-                    {format(parseISO(post.date), "yyyy MMM, d")}
+                    {format(parseISO(post.date), config.dateFormat)}
                   </PostDate>
                 </div>
                 <div className="column">
@@ -80,7 +80,6 @@ function PostListing({ postEdges }) {
                   {post.additionalArea} 
                 </div>
               </FlexContainer>
-              {/* </a> */}
             </Link>
           </PostItem>
         ))

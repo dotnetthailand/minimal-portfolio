@@ -11,9 +11,8 @@ const config = {
   siteRssTitle: "Thadaw.com RSS feed", // Title of the RSS feed
   siteFBAppID: "xxxxx", // FB Application ID for using app insights
   googleAnalyticsID: "UA-625xxxx-1", // GA tracking ID.
-  disqusShortname: "https-vagr9k-github-io-gatsby-advanced-starter", // Disqus shortname.
   dateFromFormat: "YYYY-MM-DD", // Date format used in the frontmatter.
-  dateFormat: "DD/MM/YYYY", // Date format for display.
+  dateFormat: "yyyy MMM, d", // Date format for display.
   postsPerPage: 10, // Amount of posts displayed per listing page.
   profile:{
     name: "Thada Wangthammang", // Username to display in the author segment.

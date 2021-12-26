@@ -42,8 +42,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
   const postPage = path.resolve("src/templates/post.jsx");
-  const tagPage = path.resolve("src/templates/tag.jsx");
-  // const categoryPage = path.resolve("src/templates/category.jsx");
   const listingPage = path.resolve("./src/templates/PostListingPagination.jsx");
   const landingPage = path.resolve("./src/templates/PostListing.jsx");
 
@@ -131,11 +129,6 @@ exports.createPages = async ({ graphql, actions }) => {
       });
     }
 
-    // Generate a list of categories
-    // if (edge.node.frontmatter.category) {
-    //   categorySet.add(edge.node.frontmatter.category);
-    // }
-
     // Create post pages
     const nextID = index + 1 < postsEdges.length ? index + 1 : 0;
     const prevID = index - 1 >= 0 ? index - 1 : postsEdges.length - 1;
@@ -155,21 +148,4 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 
-  //  Create tag pages
-  tagSet.forEach((tag) => {
-    createPage({
-      path: `/tags/${_.kebabCase(tag)}/`,
-      component: tagPage,
-      context: { tag },
-    });
-  });
-
-  // Create category pages
-  // categorySet.forEach((category) => {
-  //   createPage({
-  //     path: `/categories/${_.kebabCase(category)}/`,
-  //     component: categoryPage,
-  //     context: { category },
-  //   });
-  // });
 };

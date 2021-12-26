@@ -1,15 +1,13 @@
-import React, {useRef} from "react";
+import React, { useRef } from "react";
 import { Helmet } from "react-helmet";
 import { graphql, Link } from "gatsby";
 import _ from "lodash";
 import styled from 'styled-components';
 import { parseISO, format } from "date-fns";
-
 import Layout from "../layout/PageLayout";
 import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
 import { onMobile } from "../themes/responsive";
-
 import "./prism-template.css";
 
 export default function PostTemplate({ data, pageContext }) {
@@ -17,7 +15,7 @@ export default function PostTemplate({ data, pageContext }) {
   const { slug } = pageContext;
   const postNode = data.markdownRemark;
   const post = postNode.frontmatter;
-  const date = data.markdownRemark.fields.date;
+  const { date } = data.markdownRemark.fields;
   if (!post.id) {
     post.id = slug;
   }
@@ -37,8 +35,8 @@ export default function PostTemplate({ data, pageContext }) {
           <HorizontalDivider />
 
           {/* eslint-disable-next-line react/no-danger */}
-          <PostContent ref={contentRef} 
-            dangerouslySetInnerHTML={{ __html: postNode.html }} 
+          <PostContent ref={contentRef}
+            dangerouslySetInnerHTML={{ __html: postNode.html }}
           />
 
           <div className="post-meta">

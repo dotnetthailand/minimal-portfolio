@@ -2,7 +2,6 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import config from "../../data/SiteConfig";
 import "../themes/rootTheme.css";
-import { GlobalStyle } from '../themes';
 import styled from 'styled-components';
 
 export default function MainLayout({ children }: any) {
@@ -13,7 +12,6 @@ export default function MainLayout({ children }: any) {
         <meta name="description" content={config.siteDescription} />
         <html lang="en" />
       </Helmet>
-      <GlobalStyle />
       <Container >
         {children}
       </Container>

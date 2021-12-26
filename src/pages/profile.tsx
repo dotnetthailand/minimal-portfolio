@@ -1,5 +1,4 @@
 import React from "react";
-import { PageProps } from "gatsby";
 import { Helmet } from "react-helmet";
 import styled from 'styled-components';
 import Layout from "../layout/PageLayout";
@@ -14,14 +13,16 @@ function ProfilePage() {
         <Helmet title={`About | ${config.siteTitle}`} />
         <h2>Profile</h2>
         <FlexContainer>
-          <Column width="350px">
-            efefewf
+          <Column width="350px" style={{ marginRight: '30px'}}>
+            <Avatar src={config.profile.avatar} />
+            <Bio>
+              <p>{config.profile.name}</p> 
+              <p>{config.profile.email}</p>
+              <p>{config.profile.location}</p>
+            </Bio>
           </Column>
           <Column>
-            <p>Vestibulum tempus faucibus felis, nec tristique justo eleifend at. Vivamus sed est mattis, ullamcorper eros non, suscipit augue. Sed vestibulum dapibus nisi ut luctus. Nullam varius urna non facilisis ultricies. In accumsan lectus efficitur nulla aliquam dapibus. Nunc ultrices vestibulum sem et hendrerit. Fusce vel bibendum enim.
-            </p>
-            <p>
-            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec sagittis vulputate sodales. Nulla rhoncus turpis sed lectus varius, a dapibus nisl tincidunt. Maecenas dictum, odio nec tempus fringilla, nibh massa vehicula sem, ut congue turpis ante vitae tortor. Nam pretium dui in tortor laoreet, convallis gravida lacus volutpat. Duis tellus lectus, dictum eu metus ac, accumsan congue ex. Suspendisse aliquam, ligula sit amet facilisis fringilla, mauris nisl placerat turpis, ut egestas ante orci ac justo. Phasellus venenatis ipsum vel erat commodo, in tristique mi eleifend. Integer velit lorem, convallis vitae suscipit nec, pretium quis mauris.</p>
+            <p>{config.profile.description}</p>
             <UserLinks config={config} size="30px" spacing="7px"/>
           </Column>
           
@@ -40,6 +41,18 @@ const FlexContainer = styled.div`
 
 `;
 
+const Bio = styled.div`
+  p {
+    margin: 5px 0px;
+  }
+`;
+
+const Avatar = styled.img`
+  border-radius: 50%;
+  width: 100%;
+  padding: 20px;
+`;
+
 interface IColumnProp {
   width?: string
 }
@@ -50,6 +63,5 @@ const Column = styled.div<IColumnProp>`
     width: 100%;
   };
 `;
-
 
 export default ProfilePage;

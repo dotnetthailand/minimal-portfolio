@@ -5,7 +5,8 @@ import UserLinks from "../components/UserLinks/UserLinks";
 import "../themes/font-awesome-all-5.2.0.css";
 import config from "../../data/SiteConfig";
 
-console.log(onMobile);
+const { headlines } = config;
+const headlinesWithDot = headlines.slice(0, headlines.length - 1);
 
 const Hero = (props: any) => {
   const { ...restProps } = props;
@@ -15,20 +16,19 @@ const Hero = (props: any) => {
       <div className="header-main">
         <h1>{config.siteTitle}</h1>
 
-        <span className="attr">Web designer</span>
-        <span className="dot">•</span>
-        <span className="attr">Architect</span>
-        <span className="dot">•</span>
-        <span className="attr">Mechanic</span>
-        {/* <UserLinks config={config} labeled /> */}
-        
+        {headlinesWithDot.map(headline => ( 
+          <>
+            <span className="attr">{headline}</span>
+            <span className="dot">•</span>
+          </>
+        ))}
+        <span className="attr">{headlines.slice(-1)}</span>
       </div>
     </Container>
   );
 };
 
 const Container = styled.div`
-  /* margin-top: 150px; */
   margin-bottom: 100px;
 
   h1{
@@ -45,10 +45,9 @@ const Container = styled.div`
 
   .attr {
       font-family: 'Anonymous Pro', monospace;
-      background-color: #C3F8FF;
+      background-color: var(--header-bg-highlight);
       font-size:1.2rem;
       margin: 0 .5rem 0 .5rem;
-  
     }
 
     .attr:hover {

@@ -23,6 +23,9 @@ const config = {
     avatar: "https://avatars.githubusercontent.com/u/3647850?v=4", // User avatar to display in the author segment.
     description: "Yeah, I like animals better than people sometimes... Especially dogs. Dogs are the best. Every time you come home, they act like they haven't seen you in a year. And the good thing about dogs... is they got different dogs for different people.", // User description to display in the author segment.
   },    
+  headlines: [
+    'Sofware Engineer', 'Photographer', 'Travel'
+  ],
   // Links to social profiles/projects you want to display in the author segment/navigation bar.
   userLinks: [
     {

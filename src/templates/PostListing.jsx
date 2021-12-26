@@ -7,7 +7,6 @@ import Hero from "../components/Hero";
 import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
 import styled from 'styled-components';
-import breakpoint from 'styled-components-breakpoint';
 
 function Landing({ data }) {
   const postEdges = data.allMarkdownRemark.edges;
@@ -32,10 +31,6 @@ const Header = styled.h4`
   font-family: var(--font-family-inter);  
   /* font-weight: 500; */
   font-size: 1.4rem;
-
-  ${breakpoint('tablet')`
-      font-size: 1.5rem;
-    `}
 `;
 
 /* eslint no-undef: "off" */

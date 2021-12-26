@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import styled from 'styled-components';
-import breakpoint from 'styled-components-breakpoint';
+import { onMobile } from "../themes/responsive";
 import UserLinks from "../components/UserLinks/UserLinks";
 import "../themes/font-awesome-all-5.2.0.css";
 import config from "../../data/SiteConfig";
+
+console.log(onMobile);
 
 const Hero = (props: any) => {
   const { ...restProps } = props;
@@ -37,11 +39,12 @@ const Container = styled.div`
   h1{
     margin-bottom: 0;
     font-family: var(--font-family-inter);
-    font-size: 1.6rem;
+    font-size: 3.5rem;
+   
 
-    ${breakpoint('tablet')`
-      font-size: 3.5rem;
-    `}
+    ${onMobile} {
+      font-size: 2rem;
+    }
 
   }
 

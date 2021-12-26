@@ -3,13 +3,13 @@ import { Helmet } from "react-helmet";
 import { graphql, Link } from "gatsby";
 import _ from "lodash";
 import styled from 'styled-components';
-import breakpoint from 'styled-components-breakpoint';
 import { parseISO, format } from "date-fns";
 
 import Layout from "../layout/PageLayout";
 // import TableOfContents from "../components/TableOfContents";
 import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
+import { onMobile } from "../themes/responsive";
 
 // import "./dracula.css";
 import "./prism-template.css";
@@ -181,11 +181,11 @@ const PostContent = styled.div`
 
 const Container = styled.div`
  .post-title{
-  font-size: 2rem;
+  font-size: 2.5rem;
   
-  ${breakpoint('tablet')`
-    font-size: 2.5rem;
-  `}
+  ${onMobile} {
+    font-size: 2rem;
+  }
 }
 `;
 

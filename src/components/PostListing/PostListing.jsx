@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
 import styled from 'styled-components';
-import breakpoint from 'styled-components-breakpoint';
 import { parseISO, format } from "date-fns";
 
 function PostListing({ postEdges }) {
@@ -138,9 +137,6 @@ const FlexContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
 
-  ${breakpoint('tablet')`
-    flex-wrap: nowrap;
-  `}
 `;
 
 // const div = styled.div`

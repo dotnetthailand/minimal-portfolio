@@ -9,6 +9,7 @@ import CenterContainer from "../components/CenterContainer";
 import ListGithubProjects from "../components/ListGithubProjects";
 import GitHubCalendar from 'github-calendar';
 import "../themes/github-calendar-responsive.css";
+import { onMobile } from "../themes/responsive";
 
 const PageLayout = (props: any) => {
     const { children } = props;

@@ -9,6 +9,7 @@ import config from "../../data/SiteConfig";
 
 import styled from "styled-components"
 import Hero from "../components/Hero";
+import { onMobile } from "../themes/responsive";
 
 
 function PostListingPagination({ pageContext, data }) {
@@ -43,7 +44,7 @@ function PostListingPagination({ pageContext, data }) {
 
   return (
     <PageLayout>
-      <h2>Recent Activites</h2>
+      <Header>Recent Activites</Header>
       <div className="listing-container">
         <div className="posts-container">
           <Helmet title={config.siteTitle} />
@@ -71,6 +72,13 @@ const Link = styled.a`
     font-size: 1.2em;
   }
 `;
+
+const Header = styled.h2`
+  ${onMobile} {
+    margin-top: 80px;
+    font-size: 1.2rem;
+  }
+`
 
 const PagingContainer = styled.div`
   margin-top: 30px;

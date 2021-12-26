@@ -7,50 +7,57 @@ import Footer from "../components/Footer/Footer";
 import config from "../../data/SiteConfig";
 import CenterContainer from "../components/CenterContainer";
 import ListGithubProjects from "../components/ListGithubProjects";
-import GitHubCalendar from 'github-calendar';
-import "../themes/github-calendar-responsive.css";
-import { onMobile } from "../themes/responsive";
+import { onMobile, onTablet, breakpoints } from "../themes/responsive";
+import GitHubCalendar from "../components/GithubCalendar";
 
 const PageLayout = (props: any) => {
-    const { children } = props;
+  const { children } = props;
 
-    useEffect(() => {
-        GitHubCalendar(".calendar", config.GitHub.username, { responsive: true });
-    }, []);
-
-    return (
-        <Layout>
-            <TopBar />
-            <Hero />
-            <div>
-                <FlexContainer>
-                    <MainContainer>
-                        {children}
-                    </MainContainer>
-                    <GitHubCalendarContainer>
-                      <div className="calendar" />
-                      <Title>Recent Contribution Open Source Projects</Title>
-                      <ListGithubProjects />
-                      <MoreButton href={`https://github.com/${config.GitHub.username}?tab=repositories`} target="_blank">More projects</MoreButton>
-                    </GitHubCalendarContainer>
-                </FlexContainer>
-            </div>
-            <Footer config={config} />
-        </Layout>
-    );
+  return (
+    <Layout>
+      <TopBar />
+      <Hero />
+      <div>
+        <FlexContainer>
+          <MainColumn>
+            {children}
+          </MainColumn>
+          <div>
+            <GitHubCalendar />
+            <Title>Recent Contribution Open Source Projects</Title>
+            <ListGithubProjects />
+            <MoreButton href={`https://github.com/${config.GitHub.username}?tab=repositories`} target="_blank">More projects</MoreButton>
+          </div>
+        </FlexContainer>
+      </div>
+      <Footer config={config} />
+    </Layout>
+  );
 };
 
+export const MainColumn = styled.div`
+  width: 50%;
+
+  ${onTablet} {
+    width: 100%;
+  }
+`;
 
 export const FlexContainer = styled.div`
   display: flex; /* or inline-flex */
   justify-content: space-around;
+
+  ${onTablet} {
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+  }
 `;
 
 export const Title = styled.h4`
   font-size: 1.2rem;
 `;
 
-export const MoreButton= styled.a`
+export const MoreButton = styled.a`
   padding-top: 20px;
   font-size: 0.9rem;
   text-decoration: underline;
@@ -61,29 +68,5 @@ export const MoreButton= styled.a`
   }
 `;
 
-
-export const GitHubCalendarContainer = styled.div`
-
-  .calendar{
-    width: 500px;
-    .graph-before-activity-overview{
-    padding: 13px;
-    }
-    .contrib-number{
-      font-size: 18px;
-      color: inherit;
-    }
-    .float-right.color-fg-muted{
-      font-size: 10px; 
-      padding-bottom: 10px;
-    }
-  }
-
-`;
-
-
-export const MainContainer = styled.div`
-  width: 50%;
-`;
 
 export default PageLayout;

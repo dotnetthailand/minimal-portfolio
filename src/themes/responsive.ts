@@ -1,7 +1,7 @@
 // responsive.ts from https://thadaw.com/s/ne5q3pt/
 import { useMediaQuery } from 'react-responsive';
 
-const breakpoints: Record<string, number> = {
+export const breakpoints: Record<string, number> = {
   small: 768,
   large: 1170,
 };

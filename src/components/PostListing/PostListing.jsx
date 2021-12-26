@@ -136,16 +136,7 @@ const TableContainer = styled.div`
 const FlexContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-
 `;
 
-// const div = styled.div`
-//   padding-left: 10px;
-//   width: 100%;
-
-//   ${breakpoint('tablet')`
-//     width: ${({ width }) => (width ? width : 0)};
-//   `}
-// `;
 
 export default PostListing;

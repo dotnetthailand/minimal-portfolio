@@ -14,6 +14,11 @@ const TopBar = (props: any) => {
         <FlexContainer>
           <FlexItem>
 
+            <Button href="/">Recent Activites</Button>
+            <Button href="/projects">Projects</Button>
+            <Button href="/profile">Profile</Button>
+            <Button href="/contact">Contact</Button>
+
           </FlexItem>
           <FlexItem >
             <ToggleOffset>
@@ -73,5 +78,24 @@ const  Wrapper = styled.div`
   margin-top: 15px;
 `;
 
+const Button = styled.a`
+  
+  font-size: 0.85rem;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 10px;
+  color: var(--colors-text-2);
+  :visited {
+    color: var(--colors-text-2);
+  }
+  :hover{
+    background: var(--colors-hover-0);
+    color: var(--colors-text-0);
+  }
+  i{
+    color: var(--colors-text-0);
+    font-size: 1.2em;
+  }
+`;
 
 export default TopBar;

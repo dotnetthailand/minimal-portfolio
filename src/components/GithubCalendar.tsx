@@ -10,7 +10,7 @@ const GitHubCalendar = (props: any) => {
   const [windowWidth, setWindowWidth] = useState<number>(500);
 
   useEffect(() => {
-    initialGitHubCalendar(".calendar", config.GitHub.username, { responsive: true });
+    initialGitHubCalendar(".calendar", config.profile.github, { responsive: true });
 
     // Handler to call on window resize
     function handleResize() {

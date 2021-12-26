@@ -10,18 +10,20 @@ const config = {
   siteRss: "/rss.xml", // Path to the RSS file.
   siteRssTitle: "Thadaw.com RSS feed", // Title of the RSS feed
   siteFBAppID: "xxxxx", // FB Application ID for using app insights
-  googleAnalyticsID: "UA-62565035-1", // GA tracking ID.
+  googleAnalyticsID: "UA-625xxxx-1", // GA tracking ID.
   disqusShortname: "https-vagr9k-github-io-gatsby-advanced-starter", // Disqus shortname.
   dateFromFormat: "YYYY-MM-DD", // Date format used in the frontmatter.
   dateFormat: "DD/MM/YYYY", // Date format for display.
   postsPerPage: 10, // Amount of posts displayed per listing page.
-  userName: "Thada Wangthammang", // Username to display in the author segment.
-  userEmail: "thada.wth@gmail.com", // Email used for RSS feed's author segment
-  userTwitter: "mildronize", // Optionally renders "Follow Me" in the UserInfo segment.
-  userLocation: "Songkhla, Thailand", // User location to display in the author segment.
-  userAvatar: "https://api.adorable.io/avatars/150/test.png", // User avatar to display in the author segment.
-  userDescription:
-    "Yeah, I like animals better than people sometimes... Especially dogs. Dogs are the best. Every time you come home, they act like they haven't seen you in a year. And the good thing about dogs... is they got different dogs for different people.", // User description to display in the author segment.
+  profile:{
+    name: "Thada Wangthammang", // Username to display in the author segment.
+    email: "thada.wth@gmail.com", // Email used for RSS feed's author segment
+    twitter: "mildronize", // For SEO
+    github: "mildronize", // For showing Github Calendar and recent activities
+    location: "Songkhla, Thailand", // User location to display in the author segment and SEO.
+    avatar: "https://avatars.githubusercontent.com/u/3647850?v=4", // User avatar to display in the author segment.
+    description: "Yeah, I like animals better than people sometimes... Especially dogs. Dogs are the best. Every time you come home, they act like they haven't seen you in a year. And the good thing about dogs... is they got different dogs for different people.", // User description to display in the author segment.
+  },    
   // Links to social profiles/projects you want to display in the author segment/navigation bar.
   userLinks: [
     {
@@ -55,9 +57,6 @@ const config = {
       iconClassName: "fas fa-rss",
     }
   ],
-  GitHub: {
-    username: "mildronize"
-  },
   copyright: "Copyright © 2021. Thada W.", // Copyright string for the footer of the website and RSS feed.
   themeColor: "#c62828", // Used for setting manifest and progress theme colors.
   backgroundColor: "#e0e0e0", // Used for setting manifest background color.

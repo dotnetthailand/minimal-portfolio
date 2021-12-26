@@ -26,7 +26,7 @@ const PageLayout = (props: any) => {
             <GitHubCalendar />
             <Title>Recent Contribution Open Source Projects</Title>
             <ListGithubProjects />
-            <MoreButton href={`https://github.com/${config.GitHub.username}?tab=repositories`} target="_blank">More projects</MoreButton>
+            <MoreButton href={`https://github.com/${config.profile.github}?tab=repositories`} target="_blank">More projects</MoreButton>
           </div>
         </FlexContainer>
       </div>

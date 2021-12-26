@@ -52,9 +52,9 @@ function SEO({ postNode, postPath, postSEO }) {
 
   const authorJSONLD = {
     "@type": "Person",
-    name: config.userName,
-    email: config.userEmail,
-    address: config.userLocation,
+    name: config.profile.name,
+    email: config.profile.email,
+    address: config.profile.location,
   };
 
   const logoJSONLD = {
@@ -134,7 +134,7 @@ function SEO({ postNode, postPath, postSEO }) {
       <meta name="twitter:card" content="summary_large_image" />
       <meta
         name="twitter:creator"
-        content={config.userTwitter ? config.userTwitter : ""}
+        content={config.profile.twitter ? config.profile.twitter : ""}
       />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />

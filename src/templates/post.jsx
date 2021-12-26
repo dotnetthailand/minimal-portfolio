@@ -6,46 +6,11 @@ import styled from 'styled-components';
 import { parseISO, format } from "date-fns";
 
 import Layout from "../layout/PageLayout";
-// import TableOfContents from "../components/TableOfContents";
 import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
 import { onMobile } from "../themes/responsive";
 
-// import "./dracula.css";
 import "./prism-template.css";
-
-// const mock = [
-//   {
-//     "url": "#first-h2",
-//     "title": "First h2",
-//     "items": [
-//       {
-//         "url": "#first-h3-under-first-h2",
-//         "title": "First h3 under first h2",
-//         "items": [
-//           {
-//             "url": "#first-h4-under-first-h3",
-//             "title": "First h4 under first h3"
-//           }
-//         ]
-//       },
-//       {
-//         "url": "#second-h3-under-first-h2",
-//         "title": "Second h3 under first h2"
-//       }
-//     ]
-//   },
-//   {
-//     "url": "#second-h2",
-//     "title": "Second h2",
-//     "items": [
-//       {
-//         "url": "#first-h3-under-second-h2",
-//         "title": "First h3 under second h2"
-//       }
-//     ]
-//   }
-// ];
 
 export default function PostTemplate({ data, pageContext }) {
   const contentRef = useRef(null);
@@ -90,18 +55,7 @@ export default function PostTemplate({ data, pageContext }) {
                   </Link>
                 ))}
             </TagContainer>
-
-
-            {/* <SocialLinks postPath={slug} postNode={postNode} /> */}
           </div>
-          {/* <UserInfo config={config} /> */}
-          {/* <Disqus postNode={postNode} /> */}
-          {/* <Footer config={config} /> */}
-          {/* <TableOfContents
-            headings={mock}
-            disableTOC={false}
-            contentRef={contentRef}
-          /> */}
         </Container>
       </div>
     </Layout>

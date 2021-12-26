@@ -20,13 +20,8 @@ const Hero = (props: any) => {
         <span className="attr">Architect</span>
         <span className="dot">•</span>
         <span className="attr">Mechanic</span>
-        <UserLinks config={config} labeled />
-        <p>
-          <Button href="/">Recent Activites</Button>
-          <Button href="/projects">Projects</Button>
-          <Button href="/profile">Profile</Button>
-          <Button href="/contact">Contact</Button>
-        </p>
+        {/* <UserLinks config={config} labeled /> */}
+        
       </div>
     </Container>
   );

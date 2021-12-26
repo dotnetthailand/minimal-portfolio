@@ -12,7 +12,7 @@ const ListGithubProjects = (props: any) => {
   }, []);
   
   const initData = async () => {
-    const result = await axios.get(`https://api.github.com/users/${config.GitHub.username}/repos?sort=updated&per_page=3`);
+    const result = await axios.get(`https://api.github.com/users/${config.profile.github}/repos?sort=updated&per_page=3`);
     console.log(result.data);
     setRepos(result.data);
   }

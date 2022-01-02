@@ -20,7 +20,7 @@
 - Open a browser and navigate to http://localhost:8000.
 
 ## Configuration
-- Set configuration by editing the export object in `data/SiteConfig`:
+- Set configuration by editing the export object in `data/SiteConfig.js`:
 - Before editing the file, please stop tracking `StieConfig.js` without removing it from the repository.
   ```sh
   git update-index --skip-worktree data/SiteConfig.js
@@ -72,6 +72,9 @@
     themeColor: "#c62828", // Used for setting manifest and progress theme colors.
     backgroundColor: "#e0e0e0", // Used for setting manifest background color.
   };
+- To start tracking changes in `StieConfig.js` again use:
+  ```sh
+  git update-index --no-skip-worktree 
   ```
 
 ## Pagination
@@ -82,7 +85,22 @@ You can control the amount of posts via `SiteConfig` by setting the `postsPerPag
 
 NOTE: You can also disable the pagination by setting the `postsPerPage: 0`. In this case the landing page will be controlled by the `Landing` component.
 
+## Deploy to GitHub Pages
+- Create an empty repository with a name as `your-github-username.github.io`.
+- Push this project source to git
+  ```sh
+    git remote set-url origin git@github.com:your-github-username/your-github-username.github.io.git
+    git push -u origin main
+  ```
+- Set new GitHub Secrets with the following keys and values:
+  - New `PUBLIC_REPO_ACCESS_TOKEN` key and set a value to a GitHub personal access token with the "public_repo" scope.
+  - New `BASE64-SITE-CONFIG` key and set a value to base64 of your custom `data/siteConfig.js` content.
+- Disable "pages build and deployment" workflow if it exists. [Learn how to disable a workflow.](https://docs.github.com/en/actions/managing-workflow-runs/disabling-and-enabling-a-workflow#disabling-a-workflow)
+- Manually run GitHub Actions workflow again.
+- Wait until GitHub Actions deployment has finished.
+- Go to GitHub Pages settings of your repository and set a deployment branch to `gh-pages` and click `Save` button.
+- Open a browser and navigate to https://your-github-username.github.io.
+- You will find your minimal portfolio website.
+
 # Todo 
 - [ ] Migrate to TS
-- [ ] Search
-- [ ] SEO Support

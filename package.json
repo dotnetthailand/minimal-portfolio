@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "workspaces": [
+    "gatsby-theme-minimal-portfolio",
+    "minimal-portfolio-example"
+  ]
+}

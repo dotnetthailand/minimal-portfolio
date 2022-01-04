@@ -1,9 +1,11 @@
+const config = require('./SiteConfig');
+
 module.exports = {
   plugins: [
     {
       resolve: "@dotnet-thailand/gatsby-theme-minimal-portfolio",
       options: {
-        contentPath: "content"
+        config: config
       },
     },
   ],

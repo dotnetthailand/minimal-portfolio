@@ -1,11 +1,10 @@
 const urljoin = require("url-join");
-const config = require("./data/SiteConfig");
 
 // Make sure that pathPrefix is not empty
-const validatedPathPrefix = config.pathPrefix === "" ? "/" : config.pathPrefix;
+const validatedPathPrefix = (config) => config.pathPrefix === "" ? "/" : config.pathPrefix;
 
-module.exports = ({ contentPath = 'content' }) => ({
-  pathPrefix: validatedPathPrefix,
+module.exports = ({ config }) => ({
+  pathPrefix: validatedPathPrefix(config),
   siteMetadata: {
     siteUrl: urljoin(config.siteUrl, config.pathPrefix),
     rssMetadata: {
@@ -54,7 +53,7 @@ module.exports = ({ contentPath = 'content' }) => ({
       resolve: "gatsby-source-filesystem",
       options: {
         name: "posts",
-        path: contentPath,
+        path: config.contentPath,
       },
     },
     {
@@ -103,7 +102,7 @@ module.exports = ({ contentPath = 'content' }) => ({
         name: config.siteTitle,
         short_name: config.siteTitleShort,
         description: config.siteDescription,
-        start_url: validatedPathPrefix,
+        start_url: validatedPathPrefix(config),
         background_color: config.backgroundColor,
         theme_color: config.themeColor,
         display: "minimal-ui",

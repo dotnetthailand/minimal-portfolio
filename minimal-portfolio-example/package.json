@@ -1,0 +1,18 @@
+{
+  "name": "minimal-portfolio-example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@dotnet-thailand/gatsby-theme-minimal-portfolio": "*",
+    "gatsby": "^3.4.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "scripts": {
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  }
+}

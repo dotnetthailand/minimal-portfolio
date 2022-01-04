@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 import initialGitHubCalendar from 'github-calendar';
 import styled from 'styled-components';
-import config from "../../data/SiteConfig";
-import "../themes/github-calendar-responsive.css";
-import { onTablet, breakpoints } from "../themes/responsive";
+import config from '../../data/SiteConfig';
+import '../themes/github-calendar-responsive.css';
+import { breakpoints } from '../themes/responsive';
 
-const GitHubCalendar = (props: any) => {
-  const { children } = props;
+const GitHubCalendar = () => {
   const [windowWidth, setWindowWidth] = useState<number>(500);
 
   useEffect(() => {
@@ -14,8 +13,8 @@ const GitHubCalendar = (props: any) => {
 
     // Handler to call on window resize
     function handleResize() {
-      const isDesktop = breakpoints.large <  window.innerWidth? true: false;
-      const width = isDesktop ? 500: window.innerWidth - 50 ;
+      const isDesktop = breakpoints.large < window.innerWidth ? true : false;
+      const width = isDesktop ? 500 : window.innerWidth - 50;
       setWindowWidth(width);
       console.log(`current width: ${width},  ${isDesktop}`)
     }
@@ -25,20 +24,17 @@ const GitHubCalendar = (props: any) => {
     handleResize();
     // Remove event listener on cleanup
     return () => window.removeEventListener("resize", handleResize);
-
   }, []);
 
   return (
     <GitHubCalendarContainer>
-      <div className="calendar" style={{width: windowWidth}}/>
+      <div className="calendar" style={{ width: windowWidth }} />
     </GitHubCalendarContainer>
   );
 };
 
 export const GitHubCalendarContainer = styled.div`
-
   .calendar{
-
     .graph-before-activity-overview{
       padding: 13px;
     }
@@ -51,8 +47,6 @@ export const GitHubCalendarContainer = styled.div`
       padding-bottom: 10px;
     }
   }
-
 `;
-
 
 export default GitHubCalendar;

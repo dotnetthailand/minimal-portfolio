@@ -1,7 +1,14 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 import styled from 'styled-components';
 import "./UserLinks.css";
-import "../../themes/font-awesome-all-5.2.0.css";
+
+import '@fortawesome/free-solid-svg-icons';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { fas } from '@fortawesome/free-solid-svg-icons';
+library.add(fab, fas);
 
 function UserLinks({ config, size = '32px', spacing = '5px' }) {
   function getLinkElements() {
@@ -9,7 +16,7 @@ function UserLinks({ config, size = '32px', spacing = '5px' }) {
 
     return userLinks.map((link) => (
       <SocialLink href={link.url} key={link.label}>
-        <i className={link.iconClassName} />
+        <FontAwesomeIcon icon={link.iconClassName} />
       </SocialLink>
     ));
   }

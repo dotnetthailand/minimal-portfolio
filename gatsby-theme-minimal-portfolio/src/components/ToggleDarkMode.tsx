@@ -2,7 +2,6 @@
 // https://github.com/narative/gatsby-theme-novela/blob/714b6209c5bd61b220370e8a7ad84c0b1407946a/%40narative/gatsby-theme-novela/src/components/Navigation/Navigation.Header.tsx
 
 import React from 'react'
-import { func, string } from 'prop-types';
 import styled from 'styled-components';
 
 const ToggleDarkMode = ({ theme, toggleTheme }: any) => {
@@ -23,9 +22,8 @@ const ToggleDarkMode = ({ theme, toggleTheme }: any) => {
    
   );
 };
+
 const IconWrapper = styled.button<{ isDark: boolean }>`
-
-
   cursor: pointer;
   opacity: 0.5;
   position: relative;
@@ -53,9 +51,6 @@ const IconWrapper = styled.button<{ isDark: boolean }>`
     background: rgba(255, 255, 255, 0.01);
     border-radius: 5px;
   }
-
-  
-
 `;
 
 // This is based off a codepen! Much appreciated to: https://codepen.io/aaroniker/pen/KGpXZo

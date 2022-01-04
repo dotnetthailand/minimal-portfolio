@@ -1,11 +1,10 @@
 const urljoin = require("url-join");
-const path = require("path");
 const config = require("./data/SiteConfig");
 
 // Make sure that pathPrefix is not empty
 const validatedPathPrefix = config.pathPrefix === "" ? "/" : config.pathPrefix;
 
-module.exports = {
+module.exports = ({ contentPath = 'content' }) => ({
   pathPrefix: validatedPathPrefix,
   siteMetadata: {
     siteUrl: urljoin(config.siteUrl, config.pathPrefix),
@@ -55,7 +54,7 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "posts",
-        path: `${__dirname}/content/`,
+        path: contentPath,
       },
     },
     {
@@ -197,4 +196,4 @@ module.exports = {
       },
     },
   ],
-};
+});

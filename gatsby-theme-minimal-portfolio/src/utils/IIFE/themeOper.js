@@ -12,25 +12,25 @@ export default function themeOper() {
 
   try {
     preferredTheme = localStorage.getItem('theme');
-  } catch (err) {}
+  } catch (err) { }
 
-  window.__setPreferredTheme = function(newTheme) {
+  window.__setPreferredTheme = function (newTheme) {
     setTheme(newTheme);
     try {
       localStorage.setItem('theme', newTheme);
-    } catch (err) {}
+    } catch (err) { }
   };
 
-  window.__subOnThemeChange = function(key, func) {
+  window.__subOnThemeChange = function (key, func) {
     onThemeChangeFuncObj[key] = func;
   };
 
-  window.__unsubOnThemeChange = function(key) {
+  window.__unsubOnThemeChange = function (key) {
     Reflect.deleteProperty(onThemeChangeFuncObj, key);
   };
 
   const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
-  darkQuery.addListener(function(e) {
+  darkQuery.addListener(function (e) {
     window.__setPreferredTheme(e.matches ? 'dark' : 'light');
   });
 

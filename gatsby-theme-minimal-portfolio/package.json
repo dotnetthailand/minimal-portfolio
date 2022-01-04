@@ -3,7 +3,17 @@
   "description": "Minimal portfolio website",
   "version": "0.0.1",
   "author": ".NET Thailand team",
+  "keywords": [
+    "gatsby",
+    "portfolio"
+  ],
+  "license": "MIT",
+  "main": "n/a",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-brands-svg-icons": "^5.15.4",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.16",
     "@reduxjs/toolkit": "^1.5.1",
     "babel-plugin-styled-components": "^1.12.0",
     "date-fns": "^2.21.1",
@@ -70,11 +80,11 @@
     "stylelint-prettier": "^1.2.0",
     "write-good": "^1.0.8"
   },
-  "keywords": [
-    "gatsby", "portfolio"
-  ],
-  "license": "MIT",
-  "main": "n/a",
+  "peerDependencies": {
+    "gatsby": "^3.4.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
   "scripts": {
     "start": "gatsby develop",
     "build": "gatsby build",

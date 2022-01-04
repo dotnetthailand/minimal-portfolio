@@ -1,14 +1,13 @@
-import React, { useEffect } from "react";
+import React from 'react';
 import styled from 'styled-components';
-import Layout from ".";
-import TopBar from "../components/TopBar";
-import Hero from "../components/Hero";
-import Footer from "../components/Footer/Footer";
-import config from "../../data/SiteConfig";
-import CenterContainer from "../components/CenterContainer";
-import ListGithubProjects from "../components/ListGithubProjects";
-import { onMobile, onTablet, breakpoints } from "../themes/responsive";
-import GitHubCalendar from "../components/GithubCalendar";
+import Layout from '.';
+import TopBar from '../components/TopBar';
+import Hero from '../components/Hero';
+import Footer from '../components/Footer/Footer';
+import config from '../../data/SiteConfig';
+import ListGithubProjects from '../components/ListGithubProjects';
+import { onTablet, } from '../themes/responsive';
+import GitHubCalendar from '../components/GithubCalendar';
 
 const PageLayout = (props: any) => {
   const { children } = props;
@@ -67,6 +66,5 @@ export const MoreButton = styled.a`
     color: var(--colors-text-3);
   }
 `;
-
 
 export default PageLayout;

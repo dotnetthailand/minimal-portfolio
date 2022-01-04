@@ -22,9 +22,7 @@ export default function withThemeFlag(BaseComponent) {
 
     render() {
       const { theme } = this.state;
-
       const isLightTheme = theme == null ? null : theme === 'light';
-
       return <BaseComponent {...this.props} isLightTheme={isLightTheme} />;
     }
   }

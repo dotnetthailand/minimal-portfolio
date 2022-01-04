@@ -31,32 +31,32 @@ const config = {
     {
       label: "GitHub",
       url: "https://github.com/mildronize",
-      iconClassName: "fab fa-github",
+      iconClassName: ['fa', 'github'],
     },
     {
       label: "Twitter",
       url: "https://twitter.com/mildronize",
-      iconClassName: "fab fa-twitter",
+      iconClassName: ['fab', 'twitter'],
     },
     {
       label: "Email",
       url: "mailto:thada.wth@gmail.com",
-      iconClassName: "fas fa-envelope",
+      iconClassName: ['fas', 'envelope'],
     },
     {
       label: "Linkedin",
       url: "https://www.linkedin.com/in/thada-wangthammang-281894a6/",
-      iconClassName: "fab fa-linkedin",
+      iconClassName: ['fab', 'linkedin'],
     },
     {
       label: "Medium",
       url: "https://thadaw.medium.com/",
-      iconClassName: "fab fa-medium",
+      iconClassName: ['fab', 'medium'],
     },
     {
       label: "RSS",
       url: "/rss.xml",
-      iconClassName: "fas fa-rss",
+      iconClassName: ['fas', 'rss'],
     }
   ],
   copyright: "Copyright © 2021. Thada W.", // Copyright string for the footer of the website and RSS feed.

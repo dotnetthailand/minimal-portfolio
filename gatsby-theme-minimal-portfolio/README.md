@@ -104,3 +104,9 @@ NOTE: You can also disable the pagination by setting the `postsPerPage: 0`. In t
 
 # Todo 
 - [ ] Migrate to TS
+
+yarn workspace @dotnet-thailand/gatsby-theme-minimal-portfolio add \
+  @fortawesome/fontawesome-svg-core \
+  @fortawesome/free-solid-svg-icons \
+  @fortawesome/free-brands-svg-icons \
+  @fortawesome/react-fontawesome

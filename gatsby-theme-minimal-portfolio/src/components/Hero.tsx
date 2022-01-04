@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled from 'styled-components';
 import { onMobile } from "../themes/responsive";
-import UserLinks from "../components/UserLinks/UserLinks";
-import "../themes/font-awesome-all-5.2.0.css";
 import config from "../../data/SiteConfig";
 
 const { headlines } = config;
@@ -59,23 +57,6 @@ const Container = styled.div`
     text-align: center;
     
   }
-`;
-
-const Button = styled.a`
-  font-weight: bold;
-  padding: 10px;
-  border-radius: 10px;
-  :hover{
-    background: var(--colors-hover-0);
-  }
-  i{
-    color: var(--color-default);
-    font-size: 1.2em;
-  }
-`;
-
-const Subtitle = styled.span`
-  color: var(--colors-text-2);
 `;
 
 export default Hero;

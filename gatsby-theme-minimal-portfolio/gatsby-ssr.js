@@ -1,15 +1,15 @@
-const React = require('react');
-const IIFE = require('./src/utils/IIFE');
-const { ConfigProvider } = require('./src/context/ConfigContext');
+import React from 'react';
+import { themeOper } from './src/utils/IIFE';
+import { ConfigProvider } from './src/context/ConfigContext';
 
 // https://stackoverflow.com/a/62187429/1872200
-exports.onRenderBody = ({ setPreBodyComponents }) => {
+export const onRenderBody = ({ setPreBodyComponents }) => {
   // Takes an array of components as its first argument which are added to the preBodyComponents array which is passed to the html.js component.
   setPreBodyComponents([
-    <script key='themeOper' dangerouslySetInnerHTML={{ __html: `(${IIFE.themeOper.toString()})();`, }} />
+    <script key='themeOper' dangerouslySetInnerHTML={{ __html: `(${themeOper.toString()})();`, }} />
   ]);
 };
 
-exports.wrapRootElement = ({ element }) => (
+export const wrapRootElement = ({ element }) => (
   <ConfigProvider>{element}</ConfigProvider>
 );

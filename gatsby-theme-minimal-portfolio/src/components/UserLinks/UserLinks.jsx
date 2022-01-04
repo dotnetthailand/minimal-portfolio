@@ -1,14 +1,8 @@
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
 import styled from 'styled-components';
 import "./UserLinks.css";
-
 import '@fortawesome/free-solid-svg-icons';
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { fab } from '@fortawesome/free-brands-svg-icons'
-import { fas } from '@fortawesome/free-solid-svg-icons';
-library.add(fab, fas);
 
 function UserLinks({ config, size = '32px', spacing = '5px' }) {
   function getLinkElements() {

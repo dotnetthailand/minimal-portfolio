@@ -59,6 +59,16 @@ module.exports = ({ config }) => {
         },
       },
       {
+        resolve: "gatsby-source-filesystem",
+        options: {
+          name: "data",
+          path: config.dataPath,
+        },
+      },
+      {
+        resolve: `gatsby-transformer-yaml`,
+      },
+      {
         resolve: "gatsby-transformer-remark",
         options: {
           plugins: [
@@ -196,7 +206,7 @@ module.exports = ({ config }) => {
           ],
         },
       },
-    ],
+    ], // end plugins
   };
 
 };

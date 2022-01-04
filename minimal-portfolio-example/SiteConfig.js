@@ -1,5 +1,6 @@
 const config = {
   contentPath: 'content',
+  dataPath: 'data',
   siteTitle: 'Aaron', // Site title.
   siteTitleShort: 'Thada W', // Short site title for homescreen (PWA). Preferably should be under 12 characters to prevent truncation.
   siteTitleAlt: 'Thada W.', // Alternative site title for SEO.

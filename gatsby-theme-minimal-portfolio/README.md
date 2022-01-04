@@ -110,3 +110,6 @@ yarn workspace @dotnet-thailand/gatsby-theme-minimal-portfolio add \
   @fortawesome/free-solid-svg-icons \
   @fortawesome/free-brands-svg-icons \
   @fortawesome/react-fontawesome
+
+
+yarn workspace @dotnet-thailand/gatsby-theme-minimal-portfolio add gatsby-transformer-yaml

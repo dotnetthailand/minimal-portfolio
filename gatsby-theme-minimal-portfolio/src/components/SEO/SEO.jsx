@@ -1,10 +1,12 @@
-import React from "react";
-import { Helmet } from "react-helmet";
-import urljoin from "url-join";
-import moment from "moment";
-import config from "../../../data/SiteConfig";
+import React, { useContext } from 'react';
+import { Helmet } from 'react-helmet';
+import urljoin from 'url-join';
+import moment from 'moment';
+import ConfigContext from '../../context/ConfigContext';
 
 function SEO({ postNode, postPath, postSEO }) {
+  const config = useContext(ConfigContext);
+
   let title;
   let description;
   let image;
@@ -25,7 +27,7 @@ function SEO({ postNode, postPath, postSEO }) {
   }
 
   const getImagePath = (imageURI) => {
-    if(!imageURI) return;
+    if (!imageURI) return;
     if (
       !imageURI.match(
         `(https?|ftp|file)://[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]`
@@ -51,38 +53,38 @@ function SEO({ postNode, postPath, postSEO }) {
   const datePublished = getPublicationDate();
 
   const authorJSONLD = {
-    "@type": "Person",
+    '@type': 'Person',
     name: config.profile.name,
     email: config.profile.email,
     address: config.profile.location,
   };
 
   const logoJSONLD = {
-    "@type": "ImageObject",
+    '@type': 'ImageObject',
     url: getImagePath(config.siteLogo),
   };
 
   const blogURL = urljoin(config.siteUrl, config.pathPrefix);
   const schemaOrgJSONLD = [
     {
-      "@context": "http://schema.org",
-      "@type": "WebSite",
+      '@context': 'http://schema.org',
+      '@type': 'WebSite',
       url: blogURL,
       name: title,
-      alternateName: config.siteTitleAlt ? config.siteTitleAlt : "",
+      alternateName: config.siteTitleAlt ? config.siteTitleAlt : '',
     },
   ];
   if (postSEO) {
     schemaOrgJSONLD.push(
       {
-        "@context": "http://schema.org",
-        "@type": "BreadcrumbList",
+        '@context': 'http://schema.org',
+        '@type': 'BreadcrumbList',
         itemListElement: [
           {
-            "@type": "ListItem",
+            '@type': 'ListItem',
             position: 1,
             item: {
-              "@id": postURL,
+              '@id': postURL,
               name: title,
               image,
             },
@@ -90,17 +92,17 @@ function SEO({ postNode, postPath, postSEO }) {
         ],
       },
       {
-        "@context": "http://schema.org",
-        "@type": "BlogPosting",
+        '@context': 'http://schema.org',
+        '@type': 'BlogPosting',
         url: blogURL,
         name: title,
-        alternateName: config.siteTitleAlt ? config.siteTitleAlt : "",
+        alternateName: config.siteTitleAlt ? config.siteTitleAlt : '',
         headline: title,
-        image: { "@type": "ImageObject", url: image },
+        image: { '@type': 'ImageObject', url: image },
         author: authorJSONLD,
         publisher: {
           ...authorJSONLD,
-          "@type": "Organization",
+          '@type': 'Organization',
           logo: logoJSONLD,
         },
         datePublished,
@@ -111,34 +113,34 @@ function SEO({ postNode, postPath, postSEO }) {
   return (
     <Helmet>
       {/* General tags */}
-      <meta name="description" content={description} />
-      <meta name="image" content={image} />
+      <meta name='description' content={description} />
+      <meta name='image' content={image} />
 
       {/* Schema.org tags */}
-      <script type="application/ld+json">
+      <script type='application/ld+json'>
         {JSON.stringify(schemaOrgJSONLD)}
       </script>
 
       {/* OpenGraph tags */}
-      <meta property="og:url" content={postSEO ? postURL : blogURL} />
-      {postSEO ? <meta property="og:type" content="article" /> : null}
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
-      <meta property="og:image" content={image} />
+      <meta property='og:url' content={postSEO ? postURL : blogURL} />
+      {postSEO ? <meta property='og:type' content='article' /> : null}
+      <meta property='og:title' content={title} />
+      <meta property='og:description' content={description} />
+      <meta property='og:image' content={image} />
       <meta
-        property="fb:app_id"
-        content={config.siteFBAppID ? config.siteFBAppID : ""}
+        property='fb:app_id'
+        content={config.siteFBAppID ? config.siteFBAppID : ''}
       />
 
       {/* Twitter Card tags */}
-      <meta name="twitter:card" content="summary_large_image" />
+      <meta name='twitter:card' content='summary_large_image' />
       <meta
-        name="twitter:creator"
-        content={config.profile.twitter ? config.profile.twitter : ""}
+        name='twitter:creator'
+        content={config.profile.twitter ? config.profile.twitter : ''}
       />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={image} />
+      <meta name='twitter:title' content={title} />
+      <meta name='twitter:description' content={description} />
+      <meta name='twitter:image' content={image} />
     </Helmet>
   );
 }

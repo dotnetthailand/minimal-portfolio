@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import initialGitHubCalendar from 'github-calendar';
 import styled from 'styled-components';
-import config from '../../data/SiteConfig';
 import '../themes/github-calendar-responsive.css';
 import { breakpoints } from '../themes/responsive';
+import ConfigContext from '../context/ConfigContext';
 
 const GitHubCalendar = () => {
   const [windowWidth, setWindowWidth] = useState<number>(500);
+  const config = useContext(ConfigContext);
 
   useEffect(() => {
     initialGitHubCalendar(".calendar", config.profile.github, { responsive: true });

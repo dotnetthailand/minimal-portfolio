@@ -7,8 +7,25 @@ export const useSiteMetadata = () => {
         site {
           siteMetadata {
             siteTitle
+            pathPrefix
             siteUrl
             headlines
+            siteDescription
+            siteLogo
+            dateFormat
+            dateFromFormat
+            siteTitleAlt
+            siteFBAppID
+            
+            profile {
+              name
+              email
+              location
+              github
+              twitter
+              avatar
+              description
+            }
           }
         }
       }

@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import styled from 'styled-components';
 import axios from 'axios';
-import config from '../../data/SiteConfig';
+import ConfigContext from "../context/ConfigContext";
 
 const ListGithubProjects = (props: any) => {
-  // const { children, ...restProps } = props;
   const [repos, setRepos] = useState([]);
+  const config = useContext(ConfigContext);
 
   useEffect(() => {
     initData();
   }, []);
-  
+
   const initData = async () => {
     const result = await axios.get(`https://api.github.com/users/${config.profile.github}/repos?sort=updated&per_page=3`);
     console.log(result.data);
@@ -19,8 +19,8 @@ const ListGithubProjects = (props: any) => {
 
   return (
     <Container>
-      {repos.map((repo:any) => (
-          <RepoItem><a href={repo.html_url} target="_blank">{repo.name}</a></RepoItem>
+      {repos.map((repo: any) => (
+        <RepoItem><a href={repo.html_url} target="_blank">{repo.name}</a></RepoItem>
       ))}
     </Container>
   );

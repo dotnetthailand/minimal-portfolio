@@ -7,7 +7,7 @@ const config = {
   siteUrl: 'https://aaronamm.github.io', // Domain of your website without pathPrefix.
   pathPrefix: '/', // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
   nodePrefix: '/b', // Prefixes for only post created by createNodeField from `gastby-node.js`
-  siteDescription: 'You can find almost stuff about me: sharing ideas, programming techniques, web technology and others.', // Website description used for RSS feeds/meta description tag.
+  siteDescription: 'Aaron personal portfolio site', // Website description used for RSS feeds/meta description tag.
   siteRss: '/rss.xml', // Path to the RSS file.
   siteRssTitle: 'Thadaw.com RSS feed', // Title of the RSS feed
   siteFBAppID: 'xxxxx', // FB Application ID for using app insights
@@ -22,7 +22,11 @@ const config = {
     github: 'mildronize', // For showing Github Calendar and recent activities
     location: 'Songkhla, Thailand', // User location to display in the author segment and SEO.
     avatar: 'https://avatars.githubusercontent.com/u/3647850?v=4', // User avatar to display in the author segment.
-    description: 'Yeah, I like animals better than people sometimes... Especially dogs. Dogs are the best. Every time you come home, they act like they haven\'t seen you in a year.And the good thing about dogs...is they got different dogs for different people.', // User description to display in the author segment.
+    description:
+      // User description to display in the author segment.'
+      'Yeah, I like animals better than people sometimes... ' +
+      'Especially dogs. Dogs are the best. Every time you come home, they act like they haven\'t seen you in a year.' +
+      'And the good thing about dogs... is they got different dogs for different people.Aaron personal portfolio site',
   },
   headlines: [
     'Sofware engineer',

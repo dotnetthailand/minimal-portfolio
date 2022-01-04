@@ -1,14 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Helmet } from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../layout/PageLayout";
 import PostListing from "../components/PostListing/PostListing";
 import Hero from "../components/Hero";
 import SEO from "../components/SEO/SEO";
-import config from "../../data/SiteConfig";
 import styled from 'styled-components';
+import ConfigContext from "../context/ConfigContext";
 
 function Landing({ data }) {
+  const config = useContext(ConfigContext);
   const postEdges = data.allMarkdownRemark.edges;
   return (
     <Layout>

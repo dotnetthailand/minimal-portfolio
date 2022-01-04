@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "gatsby";
 import styled from 'styled-components';
 import { parseISO, format } from "date-fns";
-import config from '../../../data/SiteConfig';
+import ConfigContext from "../../context/ConfigContext";
 
 function PostListing({ postEdges }) {
+  const config = useContext(ConfigContext);
+
   const postList = [];
   postEdges.forEach((postEdge) => {
     const tags = [];
@@ -15,14 +17,14 @@ function PostListing({ postEdges }) {
     }
     // const link = postEdge.node.frontmatter.link ;
     postList.push({
-      path: postEdge.node.frontmatter.link ? postEdge.node.frontmatter.link: postEdge.node.fields.slug,
+      path: postEdge.node.frontmatter.link ? postEdge.node.frontmatter.link : postEdge.node.fields.slug,
       title: postEdge.node.frontmatter.title,
       activity: postEdge.node.frontmatter.activity,
       type: postEdge.node.frontmatter.type,
       link: postEdge.node.frontmatter.link,
       primaryArea: postEdge.node.frontmatter.primaryArea,
-      additionalArea:  postEdge.node.frontmatter.additionalArea,
-      date: postEdge.node.fields.date?postEdge.node.fields.date: "2021-01-01",
+      additionalArea: postEdge.node.frontmatter.additionalArea,
+      date: postEdge.node.fields.date ? postEdge.node.fields.date : "2021-01-01",
       excerpt: postEdge.node.excerpt,
       timeToRead: postEdge.node.timeToRead,
     });
@@ -32,9 +34,9 @@ function PostListing({ postEdges }) {
   return (
     <TableContainer>
       <div className="table">
-       <FlexContainer>
+        <FlexContainer>
           <div className="column">
-            <Title>Date</Title> 
+            <Title>Date</Title>
           </div>
           <div className="column">
             <Title>Title</Title>
@@ -52,38 +54,38 @@ function PostListing({ postEdges }) {
             <Title>Additional Contribution Area</Title>
           </div>
         </FlexContainer>
-      {
-        /* Your post list here. */
-        postList.map((post) => (
-          <PostItem>
-            <Link to={post.path} key={post.title} >
-              <FlexContainer>
-                <div className="column">
-                  <PostDate >
-                    {format(parseISO(post.date), config.dateFormat)}
-                  </PostDate>
-                </div>
-                <div className="column">
-                  {post.title} 
-                </div>
-                
-                <div className="column">
-                  {post.activity} 
-                </div>
-                <div className="column">
-                  {post.type} 
-                </div>
-                <div className="column">
-                  {post.primaryArea} 
-                </div>
-                <div className="column">
-                  {post.additionalArea} 
-                </div>
-              </FlexContainer>
-            </Link>
-          </PostItem>
-        ))
-      }
+        {
+          /* Your post list here. */
+          postList.map((post) => (
+            <PostItem>
+              <Link to={post.path} key={post.title} >
+                <FlexContainer>
+                  <div className="column">
+                    <PostDate >
+                      {format(parseISO(post.date), config.dateFormat)}
+                    </PostDate>
+                  </div>
+                  <div className="column">
+                    {post.title}
+                  </div>
+
+                  <div className="column">
+                    {post.activity}
+                  </div>
+                  <div className="column">
+                    {post.type}
+                  </div>
+                  <div className="column">
+                    {post.primaryArea}
+                  </div>
+                  <div className="column">
+                    {post.additionalArea}
+                  </div>
+                </FlexContainer>
+              </Link>
+            </PostItem>
+          ))
+        }
       </div>
     </TableContainer>
   );

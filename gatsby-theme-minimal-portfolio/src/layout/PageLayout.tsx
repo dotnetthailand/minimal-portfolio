@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import Layout from '.';
 import TopBar from '../components/TopBar';
@@ -7,11 +7,10 @@ import Footer from '../components/Footer/Footer';
 import ListGithubProjects from '../components/ListGithubProjects';
 import { onTablet, } from '../themes/responsive';
 import GitHubCalendar from '../components/GithubCalendar';
-
-
-import config from '../../data/SiteConfig';
+import ConfigContext from '../context/ConfigContext';
 
 const PageLayout = (props: any) => {
+  const config = useContext(ConfigContext);
   const { children } = props;
 
   return (

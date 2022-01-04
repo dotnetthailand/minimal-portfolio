@@ -1,5 +1,6 @@
 const React = require('react');
 const IIFE = require('./src/utils/IIFE');
+const { ConfigProvider } = require('./src/context/ConfigContext');
 
 // https://stackoverflow.com/a/62187429/1872200
 exports.onRenderBody = ({ setPreBodyComponents }) => {
@@ -8,3 +9,7 @@ exports.onRenderBody = ({ setPreBodyComponents }) => {
     <script key='themeOper' dangerouslySetInnerHTML={{ __html: `(${IIFE.themeOper.toString()})();`, }} />
   ]);
 };
+
+exports.wrapRootElement = ({ element }) => (
+  <ConfigProvider>{element}</ConfigProvider>
+);

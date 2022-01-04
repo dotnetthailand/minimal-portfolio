@@ -9,7 +9,8 @@ import SEO from "../components/SEO/SEO";
 import { onMobile } from "../themes/responsive";
 import "./prism-template.css";
 
-import { useSiteMetadata } from '../hooks/use-site-metadata'
+import { useSiteMetadata } from '../hooks/use-site-metadata';
+import { ConfigProvider } from '../context/ConfigContext';
 
 export default function PostTemplate({ data, pageContext }) {
   // data is GraphQL response

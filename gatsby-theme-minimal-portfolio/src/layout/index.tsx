@@ -1,15 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Helmet } from "react-helmet";
-import config from "../../data/SiteConfig";
 import "../themes/rootTheme.css";
 import styled from 'styled-components';
+import ConfigContext from "../context/ConfigContext";
 
 export default function MainLayout({ children }: any) {
+
+  const { siteDescription } = useContext(ConfigContext);
 
   return (
     <>
       <Helmet>
-        <meta name="description" content={config.siteDescription} />
+        <meta name="description" content={siteDescription} />
         <html lang="en" />
       </Helmet>
       <Container >

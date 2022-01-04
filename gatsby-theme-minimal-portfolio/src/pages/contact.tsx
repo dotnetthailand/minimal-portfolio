@@ -1,10 +1,10 @@
-import React from "react";
-import { PageProps } from "gatsby";
+import React, { useContext } from "react";
 import { Helmet } from "react-helmet";
 import Layout from "../layout/PageLayout";
-import config from "../../data/SiteConfig";
+import ConfigContext from "../context/ConfigContext";
 
-function AboutPage(props: PageProps) {
+function AboutPage() {
+  const config = useContext(ConfigContext);
   return (
     <Layout>
       <div className="about-container">

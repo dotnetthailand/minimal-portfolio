@@ -1,18 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Helmet } from "react-helmet";
 import { graphql, Link as GatsbyLink } from "gatsby";
 import Layout from "../layout";
 import PageLayout from "../layout/PageLayout";
 import PostListing from "../components/PostListing/PostListing";
 import SEO from "../components/SEO/SEO";
-import config from "../../data/SiteConfig";
-
 import styled from "styled-components"
 import Hero from "../components/Hero";
 import { onMobile } from "../themes/responsive";
-
+import ConfigContext from "../context/ConfigContext";
 
 function PostListingPagination({ pageContext, data }) {
+  const config = useContext(ConfigContext);
   function renderPaging() {
     const { currentPageNum, pageCount } = pageContext;
     const prevPage = currentPageNum - 1 === 1 ? "/" : `/${currentPageNum - 1}/`;
@@ -36,7 +35,6 @@ function PostListingPagination({ pageContext, data }) {
         })}
         {!isLastPage && <Link href={nextPage}>Next</Link>}
       </PagingContainer>
-    
     );
   }
 
@@ -56,7 +54,6 @@ function PostListingPagination({ pageContext, data }) {
     </PageLayout>
   );
 }
-
 
 // It should use GatsbyLink due to better performance
 const Link = styled.a`

@@ -10,8 +10,8 @@ function ProfilePage() {
   const config = useContext(ConfigContext)
   return (
     <Layout>
-      <div className="about-container">
-        <Helmet title={`About | ${config.siteTitle}`} />
+      <div className="container">
+        <Helmet title={`Profile | ${config.siteTitle}`} />
         <h2>Profile</h2>
         <FlexContainer>
           <Column width="350px" style={{ marginRight: '30px' }}>

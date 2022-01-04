@@ -30,7 +30,7 @@ const Tag = styled.span`
   margin-right: 20px;
 `;
 
-function AboutPage() {
+function ProjectPage() {
   const config = useContext(ConfigContext);
 
   const { allProjectsYaml: { nodes } } = useStaticQuery(
@@ -49,8 +49,8 @@ function AboutPage() {
 
   return (
     <Layout>
-      <div className='about-container'>
-        <Helmet title={`About | ${config.siteTitle}`} />
+      <div className='container'>
+        <Helmet title={`Projects | ${config.siteTitle}`} />
         <h2>Projects</h2>
         {nodes.map((project: Project) => (
           <ProjectItem><a href={project.link} target='_blank'>{project.name}</a>
@@ -66,4 +66,4 @@ function AboutPage() {
   );
 }
 
-export default AboutPage;
+export default ProjectPage;

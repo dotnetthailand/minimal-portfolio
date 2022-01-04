@@ -19,4 +19,5 @@ export default interface ISiteConfig {
   nodePrefix: string;
   siteDescription: string;
   profile: IProfile;
+  headlines: string[]
 }

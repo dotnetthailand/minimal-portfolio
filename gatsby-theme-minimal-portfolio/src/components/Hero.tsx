@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from 'styled-components';
+import ConfigContext from "../context/ConfigContext";
 import { onMobile } from "../themes/responsive";
-import { useSiteMetadata } from '../hooks/use-site-metadata'
 
 const Hero = (props: any) => {
-  const { siteTitle, headlines } = useSiteMetadata();
+  const { siteTitle, headlines } = useContext(ConfigContext);
   const headlinesWithDot = headlines.slice(0, headlines.length - 1) as Array<string>;
   const { ...restProps } = props;
 

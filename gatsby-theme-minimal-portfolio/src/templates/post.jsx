@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
 import { Helmet } from "react-helmet";
 import { graphql, Link } from "gatsby";
 import _ from "lodash";
@@ -8,13 +8,11 @@ import Layout from "../layout/PageLayout";
 import SEO from "../components/SEO/SEO";
 import { onMobile } from "../themes/responsive";
 import "./prism-template.css";
-
-import { useSiteMetadata } from '../hooks/use-site-metadata';
-import { ConfigProvider } from '../context/ConfigContext';
+import ConfigContext from "../context/ConfigContext";
 
 export default function PostTemplate({ data, pageContext }) {
   // data is GraphQL response
-  const { siteTitle } = useSiteMetadata()
+  const { siteTitle } = useContext(ConfigContext)
   const contentRef = useRef(null);
   const { slug } = pageContext;
   const postNode = data.markdownRemark;
@@ -45,7 +43,6 @@ export default function PostTemplate({ data, pageContext }) {
 
           <div className="post-meta">
             <TagContainer>
-
               {post.tags &&
                 post.tags.map((tag) => (
                   <Link
@@ -119,7 +116,6 @@ const PostContent = styled.div`
       height: auto;
     }
 
-    
     blockquote {
       background-color: var(--colors-blockquote);
       padding: 15px 25px;
@@ -132,7 +128,6 @@ const PostContent = styled.div`
       margin: 0;
       padding: 0;
     } 
-
 `;
 
 const Container = styled.div`
@@ -155,7 +150,6 @@ const Tag = styled.span`
   font-size: 1rem;
   margin-right: 30px;
 `;
-
 
 /* eslint no-undef: "off" */
 // Page query that can accept a variable from createPage's context parameter

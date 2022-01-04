@@ -9,9 +9,12 @@ module.exports = ({ config }) => {
     ...config,
     siteUrl: urljoin(config.siteUrl, config.pathPrefix),
     rssMetadata: {
+      title: config.siteTitle,
       site_url: urljoin(config.siteUrl, config.pathPrefix),
       feed_url: urljoin(config.siteUrl, config.pathPrefix, config.siteRss),
       image_url: `${urljoin(config.siteUrl, config.pathPrefix)}/logos/logo-512.png`,
+      description: config.siteDescription,
+      copyright: config.copyright,
     },
   };
 

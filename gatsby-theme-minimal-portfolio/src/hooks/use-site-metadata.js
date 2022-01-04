@@ -7,6 +7,7 @@ export const useSiteMetadata = () => {
         site {
           siteMetadata {
             siteTitle
+            siteDescription
             pathPrefix
             siteUrl
             headlines
@@ -25,6 +26,12 @@ export const useSiteMetadata = () => {
               twitter
               avatar
               description
+            }
+
+            userLinks {
+              label
+              url
+              iconClassName
             }
           }
         }

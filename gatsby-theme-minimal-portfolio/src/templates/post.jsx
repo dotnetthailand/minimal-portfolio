@@ -6,11 +6,14 @@ import styled from 'styled-components';
 import { parseISO, format } from "date-fns";
 import Layout from "../layout/PageLayout";
 import SEO from "../components/SEO/SEO";
-import config from "../../data/SiteConfig";
 import { onMobile } from "../themes/responsive";
 import "./prism-template.css";
 
+import { useSiteMetadata } from '../hooks/use-site-metadata'
+
 export default function PostTemplate({ data, pageContext }) {
+  // data is GraphQL response
+  const { siteTitle } = useSiteMetadata()
   const contentRef = useRef(null);
   const { slug } = pageContext;
   const postNode = data.markdownRemark;
@@ -24,7 +27,7 @@ export default function PostTemplate({ data, pageContext }) {
     <Layout>
       <div>
         <Helmet>
-          <title>{`${post.title} | ${config.siteTitle}`}</title>
+          <title>{`${post.title} | ${siteTitle}`}</title>
         </Helmet>
         <SEO postPath={slug} postNode={postNode} postSEO />
         <Container>
@@ -154,6 +157,7 @@ const Tag = styled.span`
 
 
 /* eslint no-undef: "off" */
+// Page query that can accept a variable from createPage's context parameter
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {

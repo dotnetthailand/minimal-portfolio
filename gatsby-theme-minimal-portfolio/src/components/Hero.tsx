@@ -1,20 +1,19 @@
 import React from "react";
 import styled from 'styled-components';
 import { onMobile } from "../themes/responsive";
-import config from "../../data/SiteConfig";
-
-const { headlines } = config;
-const headlinesWithDot = headlines.slice(0, headlines.length - 1);
+import { useSiteMetadata } from '../hooks/use-site-metadata'
 
 const Hero = (props: any) => {
+  const { siteTitle, headlines } = useSiteMetadata();
+  const headlinesWithDot = headlines.slice(0, headlines.length - 1) as Array<string>;
   const { ...restProps } = props;
 
   return (
     <Container {...restProps}>
       <div className="header-main">
-        <h1>{config.siteTitle}</h1>
+        <h1>{siteTitle}</h1>
 
-        {headlinesWithDot.map(headline => ( 
+        {headlinesWithDot.map(headline => (
           <>
             <span className="attr">{headline}</span>
             <span className="dot">•</span>
@@ -34,11 +33,9 @@ const Container = styled.div`
     font-family: var(--font-family-inter);
     font-size: 3.5rem;
    
-
     ${onMobile} {
       font-size: 2rem;
     }
-
   }
 
   .attr {
@@ -55,7 +52,6 @@ const Container = styled.div`
   .header-main {
     padding: 0;
     text-align: center;
-    
   }
 `;
 

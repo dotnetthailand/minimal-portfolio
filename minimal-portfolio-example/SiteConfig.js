@@ -4,7 +4,7 @@ const config = {
   siteTitleShort: 'Thada W', // Short site title for homescreen (PWA). Preferably should be under 12 characters to prevent truncation.
   siteTitleAlt: 'Thada W.', // Alternative site title for SEO.
   siteLogo: '/logos/android-chrome-512x512.png', // Logo used for SEO and manifest.
-  siteUrl: 'https://thadaw.com', // Domain of your website without pathPrefix.
+  siteUrl: 'https://aaronamm.github.io', // Domain of your website without pathPrefix.
   pathPrefix: '/', // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
   nodePrefix: '/b', // Prefixes for only post created by createNodeField from `gastby-node.js`
   siteDescription: 'You can find almost stuff about me: sharing ideas, programming techniques, web technology and others.', // Website description used for RSS feeds/meta description tag.
@@ -16,8 +16,8 @@ const config = {
   dateFormat: 'yyyy MMM, d', // Date format for display.
   postsPerPage: 10, // Amount of posts displayed per listing page.
   profile: {
-    name: 'Thada Wangthammang', // Username to display in the author segment.
-    email: 'thada.wth@gmail.com', // Email used for RSS feed's author segment
+    name: 'Aaron Pongtongmuang', // Username to display in the author segment.
+    email: 'your-email@gmail.com', // Email used for RSS feed's author segment
     twitter: 'mildronize', // For SEO
     github: 'mildronize', // For showing Github Calendar and recent activities
     location: 'Songkhla, Thailand', // User location to display in the author segment and SEO.
@@ -25,7 +25,9 @@ const config = {
     description: 'Yeah, I like animals better than people sometimes... Especially dogs. Dogs are the best. Every time you come home, they act like they haven\'t seen you in a year.And the good thing about dogs...is they got different dogs for different people.', // User description to display in the author segment.
   },
   headlines: [
-    'Sofware Engineer', 'Photographer', 'Travel'
+    'Sofware engineer',
+    'Open source contributor',
+    'Blogger'
   ],
   // Links to social profiles/projects you want to display in the author segment/navigation bar.
   userLinks: [

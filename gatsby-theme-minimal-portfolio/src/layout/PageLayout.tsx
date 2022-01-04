@@ -4,10 +4,12 @@ import Layout from '.';
 import TopBar from '../components/TopBar';
 import Hero from '../components/Hero';
 import Footer from '../components/Footer/Footer';
-import config from '../../data/SiteConfig';
 import ListGithubProjects from '../components/ListGithubProjects';
 import { onTablet, } from '../themes/responsive';
 import GitHubCalendar from '../components/GithubCalendar';
+
+
+import config from '../../data/SiteConfig';
 
 const PageLayout = (props: any) => {
   const { children } = props;

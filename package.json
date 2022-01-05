@@ -1,7 +1,15 @@
 {
   "private": true,
   "workspaces": [
-    "gatsby-theme-minimal-portfolio",
+    "@dotnet-thailand/*",
     "minimal-portfolio-example"
-  ]
+  ],
+  "scripts": {
+    "changeset": "changeset",
+    "release": "changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/changelog-github": "^0.4.2",
+    "@changesets/cli": "^2.19.0"
+  }
 }

@@ -3,6 +3,14 @@
   "description": "Minimal portfolio website",
   "version": "0.0.1",
   "author": ".NET Thailand team",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dotnetthailand/minimal-portfolio.git",
+    "directory": "@dotnet-thailand/gatsby-theme-minimal-portfolio"
+  },
   "keywords": [
     "gatsby",
     "portfolio"

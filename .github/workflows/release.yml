@@ -17,8 +17,19 @@ jobs:
         with:
           version: 12.x
 
+
       - name: Install Dependencies
         run: yarn
+
+
+      - name: Creating .npmrc
+        run: |
+          cat << EOF > "$HOME/.npmrc"
+            registry-url: https://registry.npmjs.org/
+            //registry.npmjs.org/:_authToken=$NPM_TOKEN
+          EOF
+        env:
+          NPM_TOKEN: ${{ secrets.AUTOMATION_NPM_ACCESS_TOKEN }}
 
       - name: Create Release Pull Request or Publish to npm
         uses: changesets/action@master

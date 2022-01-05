@@ -1,7 +1,7 @@
 {
   "private": true,
   "workspaces": [
-    "@dotnet-thailand/*",
+    "@dotnetthailand/*",
     "minimal-portfolio-example"
   ],
   "scripts": {

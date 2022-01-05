@@ -1,7 +1,7 @@
 {
   "private": true,
   "workspaces": [
-    "@dotnetthailand/gatsby-theme-minimal-portfolio",
+    "@dotnetthailand/*",
     "minimal-portfolio-example"
   ],
   "scripts": {

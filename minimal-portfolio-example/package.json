@@ -5,7 +5,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "@dotnethailand/gatsby-theme-minimal-portfolio": "*",
+    "@dotnetthailand/gatsby-theme-minimal-portfolio": "*",
     "gatsby": "^3.4.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"

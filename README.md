@@ -97,3 +97,6 @@ NOTE: You can also disable the pagination by setting the `postsPerPage: 0`. In t
 - [ ] Migrate to TS
 [ ] Set up JS Lint to remove unused variables 
 [ ] Fix error when clicking tag
+
+
+space to select

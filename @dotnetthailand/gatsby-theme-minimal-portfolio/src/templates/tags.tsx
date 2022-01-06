@@ -1,14 +1,11 @@
 import React, { useContext } from "react"
-import PropTypes from "prop-types"
 import { Helmet } from "react-helmet";
 import Layout from "../layout/PageLayout";
-import ConfigContext from "../context/ConfigContext";
 
 // Components
 import { Link, graphql } from "gatsby"
 
 const Tags = ({ pageContext, data }) => {
-  const config = useContext(ConfigContext);
   const { tag } = pageContext
   const { edges, totalCount } = data.allMarkdownRemark
   const tagHeader = `${totalCount} ${totalCount === 1 ? "activity" : "activities"} tagged with "${tag}"`

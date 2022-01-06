@@ -157,7 +157,7 @@ exports.createPages = async ({ graphql, actions }, { config }) => {
   // https://www.gatsbyjs.com/docs/adding-tags-and-categories-to-blog-posts/
   // Extract tag data from query
   const tags = markdownQueryResult.data.tags.group
-  const tagTemplate = require.resolve('./src/templates/tags.js')
+  const tagTemplate = require.resolve('./src/templates/tags.tsx')
   // Make tag pages
   tags.forEach(tag => {
     createPage({

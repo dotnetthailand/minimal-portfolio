@@ -1,12 +1,11 @@
-import React, { useContext } from "react"
-import PropTypes from "prop-types"
-import { Helmet } from "react-helmet";
-import Layout from "../layout/PageLayout";
+import React from 'react'
+import { Helmet } from 'react-helmet';
+import Layout from '../layout/PageLayout';
 // Utilities
-import kebabCase from "lodash/kebabCase"
+import kebabCase from 'lodash/kebabCase'
 
 // Components
-import { Link, graphql } from "gatsby"
+import { Link, graphql } from 'gatsby'
 
 const TagsPage = ({
   data: {
@@ -19,7 +18,7 @@ const TagsPage = ({
 
   return (
     <Layout>
-      <div className="about-container">
+      <div className='about-container'>
         <Helmet title={title} />
         <div>
           <h1>Tags</h1>

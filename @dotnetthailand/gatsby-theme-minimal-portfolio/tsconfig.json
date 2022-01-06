@@ -13,7 +13,8 @@
     "noUnusedParameters": true,
     "removeComments": false,
     "preserveConstEnums": true,
-    "allowJs": true
+    "allowJs": true,
+    "noImplicitAny": false,
   },
   "include": ["./src/**/*"]
 }

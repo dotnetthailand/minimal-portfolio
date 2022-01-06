@@ -1,7 +1,7 @@
 {
   "name": "@dotnetthailand/gatsby-theme-minimal-portfolio",
   "description": "Minimal portfolio website",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": ".NET Thailand team",
   "publishConfig": {
     "access": "public"

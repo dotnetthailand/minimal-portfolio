@@ -27,24 +27,6 @@ module.exports = ({ config }) => {
       "gatsby-plugin-react-helmet",
       "gatsby-plugin-lodash",
       {
-        resolve: 'gatsby-plugin-pathdata',
-        options: {
-          matchNodeType: 'MarkdownRemark',
-          extract: [
-            {
-              name: 'date',
-              selector: /.+\/(\d+-\d+-\d+)-[\w-]+\.md$/,
-              replacer: '$1'
-            },
-            {
-              name: 'filename',
-              selector: /.+\/(\d+-\d+-\d+)-([\w-]+)\.md$/,
-              replacer: '$2'
-            }
-          ]
-        }
-      },
-      {
         resolve: "gatsby-source-filesystem",
         options: {
           name: "assets",
@@ -142,22 +124,21 @@ module.exports = ({ config }) => {
             ret.generator = "GatsbyJS Advanced Starter";
             return ret;
           },
-          query: `
-        {
-          site {
-            siteMetadata {
-              rssMetadata {
-                site_url
-                feed_url
-                title
-                description
-                image_url
-                copyright
+          query: ` {
+            site {
+              siteMetadata {
+                rssMetadata {
+                  site_url
+                  feed_url
+                  title
+                  description
+                  image_url
+                  copyright
+                }
               }
             }
           }
-        }
-      `,
+          `,
           feeds: [
             {
               serialize(ctx) {
@@ -185,14 +166,12 @@ module.exports = ({ config }) => {
                   node {
                     excerpt
                     html
-                    timeToRead
                     fields {
                       slug
                       date
                     }
                     frontmatter {
                       title
-                      date
                       tags
                     }
                   }

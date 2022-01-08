@@ -9,6 +9,8 @@ activity: xxx
 type: Blog Post
 link: https://thadaw.com
 primaryArea: c#
-additionalArea: F# JavaScript
+additionalAreas: 
+  - F# 
+  - JavaScript
 ---
 

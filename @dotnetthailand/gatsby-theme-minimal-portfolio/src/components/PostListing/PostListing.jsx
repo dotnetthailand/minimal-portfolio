@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { parseISO, format } from "date-fns";
 import ConfigContext from "../../context/ConfigContext";
 
-function PostListing({ postEdges }) {
+export default function PostListing({ postEdges }) {
   const config = useContext(ConfigContext);
 
   const postList = [];
@@ -17,19 +17,21 @@ function PostListing({ postEdges }) {
     }
     // const link = postEdge.node.frontmatter.link ;
     postList.push({
-      path: postEdge.node.frontmatter.link ? postEdge.node.frontmatter.link : postEdge.node.fields.slug,
+      path: postEdge.node.fields.slug,
+
       title: postEdge.node.frontmatter.title,
       activity: postEdge.node.frontmatter.activity,
       type: postEdge.node.frontmatter.type,
       link: postEdge.node.frontmatter.link,
+
       primaryArea: postEdge.node.frontmatter.primaryArea,
-      additionalArea: postEdge.node.frontmatter.additionalArea,
-      date: postEdge.node.fields.date ? postEdge.node.fields.date : "2021-01-01",
+      additionalAreas: postEdge.node.frontmatter.additionalAreas ?? [],
+      date: postEdge.node.fields.date,
       excerpt: postEdge.node.excerpt,
+
       timeToRead: postEdge.node.timeToRead,
     });
   });
-
 
   return (
     <TableContainer>
@@ -79,7 +81,7 @@ function PostListing({ postEdges }) {
                     {post.primaryArea}
                   </div>
                   <div className="column">
-                    {post.additionalArea}
+                    {post.additionalAreas.map(a => <span>{a} </span>)}
                   </div>
                 </FlexContainer>
               </Link>
@@ -102,9 +104,7 @@ const Title = styled.h4`
   padding: 20px 5px 0px 5px;
 `;
 
-
 const PostItem = styled.div`
-
   a, a:visited{
     display: inline-block;
     color: var(--text-heading);
@@ -138,6 +138,3 @@ const FlexContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
 `;
-
-
-export default PostListing;

@@ -83,6 +83,10 @@ const PagingContainer = styled.div`
 
 export default PostListingPagination;
 
+// Can't fix  warning The enum value "MarkdownRemarkFieldsEnum.fields___date" is deprecated. 
+// Sorting on fields that need arguments to resolve is deprecated.
+// GitHub issue https://github.com/gatsbyjs/gatsby/issues/31523
+
 /* eslint no-undef: "off" */
 export const listingQuery = graphql`
   query ListingQuery($skip: Int!, $limit: Int!) {
@@ -107,7 +111,7 @@ export const listingQuery = graphql`
             type
             link
             primaryArea
-            additionalArea
+            additionalAreas
           }
         }
       }

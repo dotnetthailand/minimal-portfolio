@@ -14,6 +14,7 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "clean-start": "gatsby clean; gatsby develop"
   }
 }

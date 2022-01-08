@@ -3,12 +3,46 @@ const path = require('path');
 const _ = require('lodash');
 const moment = require('moment');
 
+exports.createSchemaCustomization = ({ actions }) => {
+  console.log('MarkdownRemarkFields')
+  const { createTypes } = actions
+  // https://krzysztofzuraw.com/blog/2020/customizing-gatsby-graphql-schema/
+  // https://blog.logrocket.com/gatsby-apis-you-need-to-know/
+  // extend https://stackoverflow.com/a/56204966/1872200
+  const typeDefs = `
+    extend type MarkdownRemark {
+      frontmatter: Frontmatter!
+    }
+
+    type Frontmatter {
+      title: String!
+      link: String
+      primaryArea: String
+      additionalAreas: [String]
+
+      activity: String
+      type: String
+      excerpt: String
+      date: Date @dateformat(formatString: "YYYY-MM-DD")
+    }
+  `
+  createTypes(typeDefs)
+}
+
 exports.onCreateNode = ({ node, actions, getNode }, { config }) => {
   const { createNodeField } = actions;
-  let slug;
+
+
   if (node.internal.type === 'MarkdownRemark') {
     const fileNode = getNode(node.parent);
     const parsedFilePath = path.parse(fileNode.relativePath);
+    createNodeField({ node, name: 'filename', value: parsedFilePath.name });
+
+    const fileNamePattern = /(\d+-\d+-\d+)-([\w-]+)/;
+    const date = parsedFilePath.name.match(fileNamePattern)[1];
+    createNodeField({ node, name: 'date', value: date });
+
+    let slug;
     if (
       Object.prototype.hasOwnProperty.call(node, 'frontmatter') &&
       Object.prototype.hasOwnProperty.call(node.frontmatter, 'title')
@@ -23,17 +57,12 @@ exports.onCreateNode = ({ node, actions, getNode }, { config }) => {
     }
 
     if (Object.prototype.hasOwnProperty.call(node, 'frontmatter')) {
-      if (Object.prototype.hasOwnProperty.call(node.frontmatter, 'slug'))
+      if (Object.prototype.hasOwnProperty.call(node.frontmatter, 'slug')) {
         slug = `/${_.kebabCase(node.frontmatter.slug)}`;
-      if (Object.prototype.hasOwnProperty.call(node.frontmatter, 'date')) {
-        const date = moment(node.frontmatter.date, config.dateFromFormat);
-        if (!date.isValid)
-          console.warn(`WARNING: Invalid date.`, node.frontmatter);
-
-        createNodeField({ node, name: 'date', value: date.toISOString() });
       }
     }
     createNodeField({ node, name: 'slug', value: `${config.nodePrefix}${slug}` });
+
   }
 };
 
@@ -59,7 +88,6 @@ exports.createPages = async ({ graphql, actions }, { config }) => {
             frontmatter {
               title
               tags
-              date
             }
           }
         }

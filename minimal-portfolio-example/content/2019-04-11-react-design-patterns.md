@@ -10,7 +10,9 @@ tags:
 activity: yyy
 type: Blog Post
 primaryArea: React
-additionalArea: F# JavaScript
+additionalAreas: 
+  - F# 
+  - JavaScript
 
 ---
 

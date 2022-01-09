@@ -1,5 +1,11 @@
 # @dotnetthailand/gatsby-theme-minimal-portfolio
 
+## 0.0.4
+
+### Patch Changes
+
+- [`676a3b9`](https://github.com/dotnetthailand/minimal-portfolio/commit/676a3b9919d91f05f6cea793e08d0833656a105c) Thanks [@aaronamm](https://github.com/aaronamm)! - Improve code quality & fix typo
+
 ## 0.0.3
 
 ### Patch Changes

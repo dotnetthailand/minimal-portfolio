@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { Helmet } from 'react-helmet';
 import Layout from '../layout/PageLayout';
-
 import styled from 'styled-components';
 import ConfigContext from '../context/ConfigContext';
 import { graphql, useStaticQuery } from 'gatsby';
@@ -30,7 +29,7 @@ const Tag = styled.span`
   margin-right: 20px;
 `;
 
-function ProjectPage() {
+export default function ProjectPage() {
   const config = useContext(ConfigContext);
 
   const { allProjectsYaml: { nodes } } = useStaticQuery(
@@ -65,5 +64,3 @@ function ProjectPage() {
     </Layout>
   );
 }
-
-export default ProjectPage;

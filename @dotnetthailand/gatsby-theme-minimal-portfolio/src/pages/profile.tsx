@@ -6,7 +6,7 @@ import UserLinks from "../components/UserLinks/UserLinks";
 import { onMobile } from "../themes/responsive";
 import ConfigContext from "../context/ConfigContext";
 
-function ProfilePage() {
+export default function ProfilePage() {
   const config = useContext(ConfigContext)
   return (
     <Layout>
@@ -64,5 +64,3 @@ const Column = styled.div<IColumnProp>`
     width: 100%;
   };
 `;
-
-export default ProfilePage;

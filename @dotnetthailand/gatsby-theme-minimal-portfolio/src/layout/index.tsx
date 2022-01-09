@@ -24,3 +24,5 @@ export default function MainLayout({ children }: any) {
 const Container = styled.div`
   padding: 0 20px;
 `;
+
+export { default as PageLayout } from './PageLayout'

@@ -16,7 +16,7 @@
     "portfolio"
   ],
   "license": "MIT",
-  "main": "index.js",
+  "main": "index.ts",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-brands-svg-icons": "^5.15.4",

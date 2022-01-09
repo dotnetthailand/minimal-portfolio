@@ -1,20 +1,19 @@
 import React from 'react'
 import { Helmet } from 'react-helmet';
 import Layout from '../layout/PageLayout';
+
 // Utilities
 import kebabCase from 'lodash/kebabCase'
 
 // Components
 import { Link, graphql } from 'gatsby'
 
-const TagsPage = ({
+export default function TagsPage({
   data: {
     allMarkdownRemark: { group },
-    site: {
-      siteMetadata: { title },
-    },
+    site: { siteMetadata: { title } },
   },
-}) => {
+}) {
 
   return (
     <Layout>
@@ -36,8 +35,6 @@ const TagsPage = ({
     </Layout>
   )
 };
-
-export default TagsPage
 
 export const pageQuery = graphql`
   query {

@@ -14,7 +14,7 @@ const TopBar = (props: any) => {
         <FlexContainer>
           <FlexItem>
 
-            <Button href="/">Recent Activites</Button>
+            <Button href="/">Recent Activities</Button>
             <Button href="/projects">Projects</Button>
             <Button href="/profile">Profile</Button>
             <Button href="/contact">Contact</Button>

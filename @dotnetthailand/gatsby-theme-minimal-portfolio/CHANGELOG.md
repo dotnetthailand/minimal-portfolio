@@ -1,5 +1,11 @@
 # @dotnetthailand/gatsby-theme-minimal-portfolio
 
+## 0.0.5
+
+### Patch Changes
+
+- [`f53eca9`](https://github.com/dotnetthailand/minimal-portfolio/commit/f53eca99286dd2c5b3838088806a8a8382ad5e24) Thanks [@aaronamm](https://github.com/aaronamm)! - Export components to be used in theme shadowing
+
 ## 0.0.4
 
 ### Patch Changes

@@ -137,4 +137,5 @@ const TableContainer = styled.div`
 const FlexContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
+  word-break: break-word;
 `;

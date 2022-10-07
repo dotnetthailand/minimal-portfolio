@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Promise, Async, Await ของ JS ES6+ ฉบับสั้นๆ ไม่พูดเยอะ เจ็บคอ แถม RxJS
+activity: Promise, Async, Await ของ JS ES6+ ฉบับสั้นๆ ไม่พูดเยอะ เจ็บคอ แถม RxJS
 slug: promise-async-await-rxjs-js-es6
 tags:	
 - promise

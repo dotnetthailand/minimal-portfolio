@@ -15,7 +15,6 @@ export const useSiteMetadata = () => {
             siteLogo
             dateFormat
             dateFromFormat
-            siteTitleAlt
             siteFBAppID
             
             profile {

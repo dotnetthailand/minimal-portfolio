@@ -1,4 +1,4 @@
-import React, { useContext } from "react"
+import React from "react"
 import { Helmet } from "react-helmet";
 import Layout from "../layout/PageLayout";
 
@@ -18,10 +18,10 @@ const Tags = ({ pageContext, data }) => {
           <ul>
             {edges.map(({ node }) => {
               const { slug } = node.fields
-              const { title } = node.frontmatter
+              const { activity } = node.frontmatter
               return (
                 <li key={slug}>
-                  <Link to={slug}>{title}</Link>
+                  <Link to={slug}>{activity}</Link>
                 </li>
               )
             })}
@@ -50,7 +50,7 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            title
+            activity
           }
         }
       }

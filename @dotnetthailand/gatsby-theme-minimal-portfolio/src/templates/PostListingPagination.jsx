@@ -4,7 +4,6 @@ import { graphql, Link as GatsbyLink } from "gatsby";
 import Layout from "../layout";
 import PageLayout from "../layout/PageLayout";
 import PostListing from "../components/PostListing/PostListing";
-import SEO from "../components/SEO/SEO";
 import styled from "styled-components"
 import Hero from "../components/Hero";
 import { onMobile } from "../themes/responsive";
@@ -46,7 +45,6 @@ function PostListingPagination({ pageContext, data }) {
       <div className="listing-container">
         <div className="posts-container">
           <Helmet title={config.siteTitle} />
-          <SEO />
           <PostListing postEdges={postEdges} />
         </div>
         {renderPaging()}
@@ -104,10 +102,9 @@ export const listingQuery = graphql`
           excerpt
           timeToRead
           frontmatter {
-            title
+            activity
             tags
             date
-            activity
             type
             link
             primaryArea

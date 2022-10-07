@@ -5,7 +5,6 @@ import _ from "lodash";
 import styled from 'styled-components';
 import { parseISO, format } from "date-fns";
 import Layout from "../layout/PageLayout";
-import SEO from "../components/SEO/SEO";
 import { onMobile } from "../themes/responsive";
 import "./prism-template.css";
 import ConfigContext from "../context/ConfigContext";
@@ -26,11 +25,10 @@ export default function PostTemplate({ data, pageContext }) {
     <Layout>
       <div>
         <Helmet>
-          <title>{`${post.title} | ${siteTitle}`}</title>
+          <title>{`${post.activty} | ${siteTitle}`}</title>
         </Helmet>
-        <SEO postPath={slug} postNode={postNode} postSEO />
         <Container>
-          <h1 className="post-title">{post.title}</h1>
+          <h1 className="post-title">{post.activty}</h1>
           <div >
             {format(parseISO(date), "MMM d, yyyy")}
           </div>
@@ -160,7 +158,7 @@ export const pageQuery = graphql`
       timeToRead
       excerpt
       frontmatter {
-        title
+        activity
         tags
       }
       fields {

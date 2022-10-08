@@ -1,6 +1,6 @@
 ---
 layout: post
-title: React Design Patterns 
+activity: React Design Patterns 
 tags:	
 - react
 - pattern

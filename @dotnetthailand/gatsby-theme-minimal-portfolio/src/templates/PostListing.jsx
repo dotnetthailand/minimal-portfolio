@@ -4,7 +4,6 @@ import { graphql } from "gatsby";
 import Layout from "../layout/PageLayout";
 import PostListing from "../components/PostListing/PostListing";
 import Hero from "../components/Hero";
-import SEO from "../components/SEO/SEO";
 import styled from 'styled-components';
 import ConfigContext from "../context/ConfigContext";
 
@@ -16,7 +15,6 @@ function Landing({ data }) {
       <div className="landing-container">
         <div className="posts-container">
           <Helmet title={config.siteTitle} />
-          <SEO />
           <Hero />
           <Header>All articles</Header>
           <PostListing postEdges={postEdges} />
@@ -30,7 +28,6 @@ export default Landing;
 
 const Header = styled.h4`
   font-family: var(--font-family-inter);  
-  /* font-weight: 500; */
   font-size: 1.4rem;
 `;
 
@@ -47,7 +44,7 @@ export const pageQuery = graphql`
           excerpt
           timeToRead
           frontmatter {
-            title
+            activity
             tags
           }
         }

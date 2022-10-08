@@ -1,5 +1,5 @@
 ---
-title: React Design Patterns with link 
+activity: React Design Patterns with link 
 tags:	
 - react
 - pattern

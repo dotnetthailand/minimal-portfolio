@@ -12,7 +12,6 @@ export default interface ISiteConfig {
   contentPath: string;
   siteTitle: string;
   siteTitleShort: string;
-  siteTitleAlt: string;
   siteLogo: string;
   siteUrl: string;
   pathPrefix: string;

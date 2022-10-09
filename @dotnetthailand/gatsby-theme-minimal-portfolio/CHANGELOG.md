@@ -1,5 +1,11 @@
 # @dotnetthailand/gatsby-theme-minimal-portfolio
 
+## 1.0.0
+
+### Major Changes
+
+- [`4f80e9e`](https://github.com/dotnetthailand/minimal-portfolio/commit/4f80e9ed59566b3bf39b4f4d66ce1d9b5785452f) Thanks [@aaronamm](https://github.com/aaronamm)! - Use activity key in front matter to match domain logic
+
 ## 0.0.5
 
 ### Patch Changes

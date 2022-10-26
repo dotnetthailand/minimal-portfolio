@@ -1,5 +1,11 @@
 # @dotnetthailand/gatsby-theme-minimal-portfolio
 
+## 1.1.0
+
+### Minor Changes
+
+- [`3860f57`](https://github.com/dotnetthailand/minimal-portfolio/commit/3860f57b9e2781177d93932c4250e33c2b475998) Thanks [@aaronamm](https://github.com/aaronamm)! - Use title key in frontmatter
+
 ## 1.0.0
 
 ### Major Changes

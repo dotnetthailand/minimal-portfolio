@@ -1,6 +1,6 @@
 ---
 layout: post
-activity: "ทริคการใช้ git: การ merge บางไฟล์ไปอีก branch"
+title: "ทริคการใช้ git: การ merge บางไฟล์ไปอีก branch"
 slug: "ทริคการใช้ git: git-trick-how-to-merge-some-files-from-other-branch-th"
 description: ทริคการใช้งาน git แบบง่ายสำหรับการ merge ไฟล์ไปอีก branch
 categories: [th]

@@ -1,5 +1,5 @@
 ---
-activity: This is article name
+title: This is article name
 type: Blog Post
 link: https://codesanook.com
 primaryArea: c#

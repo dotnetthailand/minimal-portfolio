@@ -1,14 +1,12 @@
 ---
 layout: post
-activity: React Design Patterns 
+title: React Design Patterns 
+type: Blog Post
 tags:	
 - react
 - pattern
 - javascript
 - es6
-
-activity: yyy
-type: Blog Post
 primaryArea: React
 additionalAreas: 
   - F# 

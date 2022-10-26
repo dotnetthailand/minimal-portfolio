@@ -1,6 +1,6 @@
 ---
 layout: post
-activity: How to Compile & Install Gnome Builder on Debian
+title: How to Compile & Install Gnome Builder on Debian
 description: Instruction of Gnome Builder installation on Debian
 tags: [linux, debian, gnome, builder, how-to]
 categories: [en]

@@ -1,6 +1,6 @@
 ---
 layout: post
-activity: "titlesec (Latex package) doesn't create section numbers on version 2.10.1"
+title: "titlesec (Latex package) doesn't create section numbers on version 2.10.1"
 categories: [en]
 tags: [titlesec, latex, bug]
 ---

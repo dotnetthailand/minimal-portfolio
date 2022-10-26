@@ -1,7 +1,7 @@
 ---
 layout: post
 slug: setup-github-via-ssh-using-putty-on-windows-th
-activity: วิธีตั้งค่าการใช้งาน Github (แบบไม่ต้องกรอกรหัสผ่านทุกครั้ง) ผ่าน SSH บน Windows
+title: วิธีตั้งค่าการใช้งาน Github (แบบไม่ต้องกรอกรหัสผ่านทุกครั้ง) ผ่าน SSH บน Windows
 tags:	
 - how-to
 - github

@@ -1,5 +1,5 @@
 ---
-activity: "Amazing UI Design Articles"
+title: "Amazing UI Design Articles"
 tags:
 - web-design
 - design

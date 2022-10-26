@@ -1,6 +1,6 @@
 ---
 layout: post
-activity: "A very short Ubuntu/Debian packages installation sheet"
+title: "A very short Ubuntu/Debian packages installation sheet"
 categories: [en]
 tags: [ubuntu, debian, ppa, chrome, docker, vscode, zotero]
 featured: true

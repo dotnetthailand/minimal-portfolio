@@ -1,6 +1,6 @@
 ---
 layout: "post"
-activity: "เขียนบล็อกด้วยภาษา Markdown ด้วยแอพจดโน๊ต Bear บน iOS"
+title: "เขียนบล็อกด้วยภาษา Markdown ด้วยแอพจดโน๊ต Bear บน iOS"
 slug: create-blog-with-markdown-and-bear-note-on-ios-th
 description: "เขียนบล็อกด้วย Bear อัพโหลดรูปภาพขึ้น Dropbox โดยใช้แอพ workflow"
 categories: [th]
@@ -52,7 +52,7 @@ image: https://www.dropbox.com/s/ctdl5fr7c7cplbb/2018-07-20-%E0%B9%80%E0%B8%82%E
 ```markdown
 # Template ชื่อบล็อก
 ---
-activity: "เขียนบล็อกด้วยภาษา Markdown ด้วยแอพจดโน๊ต Bear บน iOS"
+title: "เขียนบล็อกด้วยภาษา Markdown ด้วยแอพจดโน๊ต Bear บน iOS"
 date: "7/20/2018"
 tags:
 	* Bear

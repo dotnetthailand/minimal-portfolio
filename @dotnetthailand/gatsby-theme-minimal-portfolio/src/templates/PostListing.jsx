@@ -44,7 +44,7 @@ export const pageQuery = graphql`
           excerpt
           timeToRead
           frontmatter {
-            activity
+            title
             tags
           }
         }

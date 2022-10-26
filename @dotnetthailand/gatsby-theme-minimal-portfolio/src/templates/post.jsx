@@ -25,10 +25,10 @@ export default function PostTemplate({ data, pageContext }) {
     <Layout>
       <div>
         <Helmet>
-          <title>{`${post.activty} | ${siteTitle}`}</title>
+          <title>{`${post.title} | ${siteTitle}`}</title>
         </Helmet>
         <Container>
-          <h1 className="post-title">{post.activty}</h1>
+          <h1 className="post-title">{post.title}</h1>
           <div >
             {format(parseISO(date), "MMM d, yyyy")}
           </div>
@@ -78,20 +78,23 @@ const PostContent = styled.div`
     h1{
       font-size: 1.7rem;
     }
+
     h2{
-        font-size: 1.5rem;
+      font-size: 1.5rem;
     }
+
     h3{
-        font-size: 1.25rem;
+      font-size: 1.25rem;
     }
+
     h4{
-        font-size: 1.15rem;
+      font-size: 1.15rem;
     }
 
     p {
-        margin: 25px 0;
+      margin: 25px 0;
     }
-
+    
     ol > li, ul > li{
       margin: 7px 0;
     }
@@ -158,7 +161,7 @@ export const pageQuery = graphql`
       timeToRead
       excerpt
       frontmatter {
-        activity
+        title
         tags
       }
       fields {

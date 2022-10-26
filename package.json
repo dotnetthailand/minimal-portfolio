@@ -5,6 +5,8 @@
     "minimal-portfolio-example"
   ],
   "scripts": {
+    "start": "yarn workspace minimal-portfolio-example start",
+    "clean": "yarn workspace minimal-portfolio-example clean",
     "changeset": "changeset",
     "release": "changeset publish"
   },

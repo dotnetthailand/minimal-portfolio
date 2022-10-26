@@ -102,7 +102,7 @@ export const listingQuery = graphql`
           excerpt
           timeToRead
           frontmatter {
-            activity
+            title
             tags
             date
             type

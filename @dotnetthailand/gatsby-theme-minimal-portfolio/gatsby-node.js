@@ -15,7 +15,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     }
 
     type Frontmatter {
-      activity: String
+      title: String
       link: String
       primaryArea: String
       additionalAreas: [String]
@@ -43,9 +43,9 @@ exports.onCreateNode = ({ node, actions, getNode }, { config }) => {
     let slug;
     if (
       Object.prototype.hasOwnProperty.call(node, 'frontmatter') &&
-      Object.prototype.hasOwnProperty.call(node.frontmatter, 'activity')
+      Object.prototype.hasOwnProperty.call(node.frontmatter, 'title')
     ) {
-      slug = `/${_.kebabCase(node.frontmatter.activity)}`;
+      slug = `/${_.kebabCase(node.frontmatter.title)}`;
     } else if (parsedFilePath.name !== 'index' && parsedFilePath.dir !== '') {
       slug = `/${parsedFilePath.dir}/${parsedFilePath.name}/`;
     } else if (parsedFilePath.dir === '') {
@@ -84,7 +84,7 @@ exports.createPages = async ({ graphql, actions }, { config }) => {
               slug
             }
             frontmatter {
-              activity
+              title
               tags
             }
           }
@@ -172,9 +172,9 @@ exports.createPages = async ({ graphql, actions }, { config }) => {
       component: postPage,
       context: {
         slug: edge.node.fields.slug,
-        nextActivity: nextEdge.node.frontmatter.activity,
+        nextActivity: nextEdge.node.frontmatter.title,
+        prevActivity: prevEdge.node.frontmatter.title,
         nextslug: nextEdge.node.fields.slug,
-        prevActivity: prevEdge.node.frontmatter.activity,
         prevslug: prevEdge.node.fields.slug,
       },
     });

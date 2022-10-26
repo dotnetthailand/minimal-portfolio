@@ -15,10 +15,10 @@ export default function PostListing({ postEdges }) {
         tags.push(tag);
       });
     }
-    // const link = postEdge.node.frontmatter.link ;
+
     postList.push({
       path: postEdge.node.fields.slug,
-      activity: postEdge.node.frontmatter.activity,
+      title: postEdge.node.frontmatter.title,
       type: postEdge.node.frontmatter.type,
       link: postEdge.node.frontmatter.link,
 
@@ -55,7 +55,7 @@ export default function PostListing({ postEdges }) {
           /* Your post list here. */
           postList.map((post) => (
             <PostItem>
-              <Link to={post.path} key={post.activity} >
+              <Link to={post.path} key={post.title} >
                 <FlexContainer>
                   <div className="column">
                     <PostDate >
@@ -63,7 +63,7 @@ export default function PostListing({ postEdges }) {
                     </PostDate>
                   </div>
                   <div className="column">
-                    {post.activity}
+                    {post.title}
                   </div>
                   <div className="column">
                     {post.type}

@@ -52,7 +52,6 @@ exports.createPages = async ({ graphql, actions }, { config }) => {
   const { createPage } = actions;
   const postPage = require.resolve('./src/templates/post.jsx');
   const listingPage = require.resolve('./src/templates/PostListingPagination.jsx');
-  const landingPage = require.resolve('./src/templates/PostListing.jsx');
 
   // alias and operation name
   // https://graphql.org/learn/queries/
@@ -113,28 +112,20 @@ exports.createPages = async ({ graphql, actions }, { config }) => {
 
   // Paging for post list
   const { postsPerPage } = config;
-  if (postsPerPage) {
-    const pageCount = Math.ceil(postsEdges.length / postsPerPage);
+  const pageCount = Math.ceil(postsEdges.length / postsPerPage);
 
-    [...Array(pageCount)].forEach((_val, pageNum) => {
-      createPage({
-        path: pageNum === 0 ? `/` : `/${pageNum + 1}/`,
-        component: listingPage,
-        context: {
-          limit: postsPerPage,
-          skip: pageNum * postsPerPage,
-          pageCount,
-          currentPageNum: pageNum + 1,
-        },
-      });
-    });
-  } else {
-    // Load the landing page instead
+  [...Array(pageCount)].forEach((_val, pageNum) => {
     createPage({
-      path: `/`,
-      component: landingPage,
+      path: pageNum === 0 ? `/` : `/${pageNum + 1}/`,
+      component: listingPage,
+      context: {
+        limit: postsPerPage,
+        skip: pageNum * postsPerPage,
+        pageCount,
+        currentPageNum: pageNum + 1,
+      },
     });
-  }
+  });
 
   // Post details page
   postsEdges.forEach((edge, index) => {

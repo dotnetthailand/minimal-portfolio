@@ -1,5 +1,11 @@
 # @dotnetthailand/gatsby-theme-minimal-portfolio
 
+## 1.1.1
+
+### Patch Changes
+
+- [`9408db1`](https://github.com/dotnetthailand/minimal-portfolio/commit/9408db11168160a89b2b44239d4ac43152094631) Thanks [@natcharinj](https://github.com/natcharinj)! - Remove warnning messages and upgrade yarn.lock file.
+
 ## 1.1.0
 
 ### Minor Changes

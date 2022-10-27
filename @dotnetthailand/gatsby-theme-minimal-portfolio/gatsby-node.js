@@ -4,27 +4,11 @@ const _ = require('lodash');
 const moment = require('moment');
 
 exports.createSchemaCustomization = ({ actions }) => {
-  console.log('MarkdownRemarkFields')
-  const { createTypes } = actions
-  // https://krzysztofzuraw.com/blog/2020/customizing-gatsby-graphql-schema/
-  // https://blog.logrocket.com/gatsby-apis-you-need-to-know/
-  // extend https://stackoverflow.com/a/56204966/1872200
-  const typeDefs = `
-    extend type MarkdownRemark {
-      frontmatter: Frontmatter!
-    }
-
-    type Frontmatter {
-      title: String
-      link: String
-      primaryArea: String
-      additionalAreas: [String]
-      type: String
-      excerpt: String
-      date: Date @dateformat(formatString: "YYYY-MM-DD")
-    }
-  `
-  createTypes(typeDefs)
+  /* 
+    Customize Gatsby’s GraphQL schema by creating type definitions, field extensions.
+    This API runs immediately before schema generation. For modifications of the generated schema,
+    e.g. to customize added third-party types, use the createResolvers API.
+  */
 }
 
 exports.onCreateNode = ({ node, actions, getNode }, { config }) => {

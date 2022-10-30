@@ -69,6 +69,9 @@ module.exports = ({ config }) => {
             "gatsby-remark-copy-linked-files",
             "gatsby-remark-autolink-headers",
             "gatsby-remark-prismjs",
+            // {
+            //   resolve: require.resolve('./plugins/gatsby-remark-purple-headers/index.js')
+            // }
           ],
         },
       },
